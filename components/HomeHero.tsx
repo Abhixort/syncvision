@@ -31,7 +31,7 @@ export default function HomeHero() {
           {/* Company Name with Color Accent */}
           <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.1] text-white tracking-tight">
             Sync<span className="text-cyan-400">Vision</span> <br className="hidden md:block" />
-            Research Solution LLP test
+            Research Solution LLP
           </h1>
 
           {/* Tagline - Increased weight for better visibility */}
