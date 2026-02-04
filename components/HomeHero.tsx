@@ -1,79 +1,55 @@
 import Link from "next/link";
-
+import Reveal from "./Reveal";
 
 export default function HomeHero() {
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-      
-      {/* Background Image with slight scale effect */}
+    <section className="relative min-h-[90vh] lg:min-h-[85vh] flex items-center overflow-hidden bg-[#0F1C2E]">
       <div
-        className="absolute inset-0 bg-cover bg-center transform scale-105"
-        style={{
-          backgroundImage: "url('assets/home-hero.png')",
-        }}
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('assets/home-hero-background.webp')" }}
       />
 
-      {/* Advanced Multi-layer Overlay */}
-      {/* 1. Base Darkening */}
-      <div className="absolute inset-0 bg-slate-950/40" />
-      {/* 2. Left-to-Right Gradient (Ensures text readability) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/60 to-transparent" />
+      <div className="absolute inset-0 bg-[#0F1C2E]/60" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0F1C2E] via-[#0F1C2E]/80 to-transparent lg:via-[#0F1C2E]/60" />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20 lg:pt-0">
         <div className="max-w-3xl">
+          <Reveal>
+            {/* Adjusted Title Size for Mobile */}
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-[1.2] text-white tracking-tight">
+              Sync<span className="text-[#2FB7DA]">Vision</span> <br className="hidden sm:block" />
+              Research Solution LLP
+            </h1>
 
-          {/* Badge / Small Title */}
-          {/* <div className="inline-block px-3 py-1 mb-4 rounded-full bg-cyan-500/10 border border-cyan-500/20">
-             <span className="text-cyan-400 text-xs font-bold uppercase tracking-widest">Trusted SMO Partner</span>
-          </div> */}
+            {/* Adjusted Tagline for Mobile */}
+            <h2 className="mt-4 sm:mt-6 text-lg sm:text-xl md:text-2xl font-medium text-[#F7F9FB] leading-snug border-l-4 border-[#2FB7DA] pl-4">
+              Reliable Site Management for <br className="hidden sm:block" />
+              <span className="text-white italic">High-Quality Clinical Trials</span>
+            </h2>
 
-          {/* Company Name with Color Accent */}
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.1] text-white tracking-tight">
-            Sync<span className="text-cyan-400">Vision</span> <br className="hidden md:block" />
-            Research Solution LLP
-          </h1>
+            <p className="mt-6 text-sm sm:text-base md:text-lg text-[#F7F9FB]/80 leading-relaxed max-w-2xl font-light">
+              A professional Site Management Organization (SMO) delivering 
+              efficient, compliant, and quality-driven site operations. 
+            </p>
 
-          {/* Tagline - Increased weight for better visibility */}
-          <h2 className="mt-6 text-xl md:text-2xl font-medium text-slate-100 leading-snug border-l-4 border-cyan-500 pl-4">
-            Reliable Site Management for <br className="hidden md:block" />
-            <span className="text-white italic">High-Quality Clinical Trials</span>
-          </h2>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <Link href="/about" className="w-full sm:w-auto">
+                <button className="w-full sm:w-auto inline-flex justify-center items-center rounded-full bg-[#2FB7DA] px-8 py-3 md:py-4 text-sm font-bold text-[#0F1C2E] hover:brightness-110 transition-all shadow-lg shadow-[#2FB7DA]/20">
+                  Know More
+                </button>
+              </Link>
 
-          {/* Description - Added line-height and max-width */}
-          <p className="mt-8 text-base md:text-lg text-slate-300 leading-relaxed max-w-2xl font-light">
-            A professional Site Management Organization (SMO) delivering 
-            efficient, compliant, and quality-driven site operations. We partner with 
-            CROs and Sponsors to ensure <span className="text-white font-normal">smooth study execution</span> and robust data integrity.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/about">
-            <button className="inline-flex cursor-pointer items-center rounded-full bg-cyan-500 px-8 py-4 text-sm font-bold text-slate-950 hover:bg-cyan-400 transition-all shadow-lg shadow-cyan-500/20 transform hover:-translate-y-0.5">
-              Know More
-            </button>
-          </Link>
-
-          <Link href="/services">
-            <button className="inline-flex cursor-pointer items-center rounded-full bg-white/5 backdrop-blur-md border border-white/20 px-8 py-4 text-sm font-bold text-white hover:bg-white/10 transition-all">
-            Our Services
-            </button>
-          </Link>
-            
-        {/* <Link
-          href="#services"
-          className="inline-flex items-center rounded-full bg-white/5 backdrop-blur-md border border-white/20 px-8 py-4 text-sm font-bold text-white hover:bg-white/10 transition-all"
-        >
-          Our Services
-        </Link> */}
-          </div>
-
+              <Link href="/services" className="w-full sm:w-auto">
+                <button className="w-full sm:w-auto inline-flex justify-center items-center rounded-full bg-white/5 backdrop-blur-md border border-white/20 px-8 py-3 md:py-4 text-sm font-bold text-white hover:bg-white/10 transition-all">
+                  Our Services
+                </button>
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </div>
 
-      {/* Optional: Bottom Gradient Fade to Page Content */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0F1C2E] to-transparent" />
     </section>
   );
 }
