@@ -5,7 +5,7 @@ import { CheckCircle2 } from "lucide-react";
 export default function AboutSection() {
   return (
     // Updated to Off-white background (#F7F9FB)
-    <section className="bg-[#F7F9FB] py-24 overflow-hidden">
+    <section className="bg-[#F7F9FB] py-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
 
         {/* LEFT: Text Content */}
@@ -62,32 +62,33 @@ export default function AboutSection() {
           </Reveal>
         </div>
 
-        {/* RIGHT: Image with Brand Overlays */}
         <div className="order-1 lg:order-2 relative">
-          <Reveal className="flex justify-center">
-            <div className="relative">
-              {/* Decorative shapes using Cyan Blue (#2FB7DA) */}
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-[#2FB7DA]/10 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
-              
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
-                <Image
-                  src="/assets/clinical-research-excellence.webp"
-                  alt="Clinical Research Site Management"
-                  width={550}
-                  height={650}
-                  className="object-cover"
-                  priority={false}
-                />
-              </div>
+  <Reveal className="flex justify-center">
+    <div className="relative w-full max-w-[500px]"> {/* Controlled max width */}
+      {/* Decorative shapes */}
+      <div className="absolute -top-6 -right-6 w-32 h-32 bg-[#2FB7DA]/10 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" />
+      
+      {/* - Changed aspect ratio to square (aspect-square) 
+          - Used 'fill' so the image container defines the size, not the image file
+      */}
+      <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-square bg-gray-100">
+        <Image
+          src="/assets/clinical-research.png"
+          alt="Clinical Research Site Management"
+          fill
+          className="object-cover"
+          priority={false}
+        />
+      </div>
 
-              {/* Stats Badge using Navy (#0F1C2E) and Cyan Blue (#2FB7DA) */}
-              <div className="absolute bottom-10 -left-10 bg-white p-6 rounded-xl shadow-xl hidden md:block border border-[#F7F9FB]">
-                <p className="text-[#2FB7DA] font-black text-3xl tracking-tighter">100%</p>
-                <p className="text-[#0F1C2E] text-xs uppercase font-bold tracking-widest">Compliance Focus</p>
-              </div>
-            </div>
-          </Reveal>
-        </div>
+      {/* Stats Badge */}
+      <div className="absolute bottom-6 -left-6 bg-white p-5 rounded-xl shadow-xl hidden md:block border border-[#F7F9FB] z-10">
+        <p className="text-[#2FB7DA] font-black text-2xl tracking-tighter">100%</p>
+        <p className="text-[#0F1C2E] text-[10px] uppercase font-bold tracking-widest">Compliance Focus</p>
+      </div>
+    </div>
+  </Reveal>
+</div>
 
       </div>
     </section>

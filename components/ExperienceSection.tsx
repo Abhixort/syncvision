@@ -53,27 +53,32 @@ export default function ExperienceSection() {
           </div>
         </Reveal>
 
-        {/* RIGHT: Image */}
-        <Reveal className="relative">
-           {/* Decorative aura using Cyan Blue (#2FB7DA) */}
-           <div className="absolute -inset-10 bg-[#2FB7DA]/5 rounded-full blur-[100px] -z-10" />
-           
-           <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-[10px] border-white">
-              <Image
-                src="/assets/experience.avif"
-                alt="SyncVision Professional Team"
-                width={550}
-                height={650}
-                className="object-cover transform hover:scale-105 transition-transform duration-700"
-              />
-           </div>
+        {/* RIGHT: Image - Standardized Experience Section */}
+<Reveal className="relative mt-12 lg:mt-0">
+  <div className="relative mx-auto w-full max-w-[500px]">
+    {/* Decorative aura - matched to your pulse style */}
+    <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#2FB7DA]/10 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse" />
+    
+    {/* Container: Applied aspect-square and standardized border-4 */}
+    <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white aspect-square bg-slate-50">
+      <Image
+        src="/assets/experience.avif"
+        alt="SyncVision Professional Team"
+        fill
+        className="object-cover transform hover:scale-105 transition-transform duration-700"
+      />
+    </div>
 
-           {/* Innovation Tag floating on image */}
-           <div className="absolute -bottom-6 -right-6 bg-[#0F1C2E] p-6 rounded-2xl shadow-xl border border-white/10 hidden md:block">
-             <p className="text-[#A3D65C] font-bold text-sm tracking-widest uppercase mb-1">Methodology</p>
-             <p className="text-white text-lg font-medium">Data-Driven Excellence</p>
-           </div>
-        </Reveal>
+    {/* Innovation Tag - Updated to use your brand Cyan (#2FB7DA) */}
+    <div className="absolute -bottom-6 -right-6 bg-[#0F1C2E] p-6 rounded-2xl shadow-xl border border-white/10 hidden md:block z-20">
+      <p className="text-[#2FB7DA] font-black text-sm tracking-[0.1em] uppercase mb-1">Methodology</p>
+      <p className="text-white text-lg font-medium">Data-Driven Excellence</p>
+    </div>
+    
+    {/* Subtle bottom-left blur for depth */}
+    <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-[#2FB7DA]/5 rounded-full blur-3xl -z-10" />
+  </div>
+</Reveal>
 
       </div>
     </section>

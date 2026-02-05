@@ -20,7 +20,7 @@ export default function AboutHero() {
       <div className="absolute inset-0 bg-gradient-to-r from-[#0F1C2E] via-[#0F1C2E]/80 to-transparent lg:via-[#0F1C2E]/60" />
 
       {/* Content Container: Left-aligned for mobile to match HomeHero */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 pt-20 lg:pt-0">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 py-12 lg:pt-0">
         <div className="max-w-3xl"> {/* Matches HomeHero container width */}
           <Reveal>
             {/* Synchronized Title Size: text-3xl for mobile */}

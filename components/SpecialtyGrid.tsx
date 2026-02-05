@@ -24,7 +24,7 @@ const areas = [
 export function SpecialtyGrid() {
   return (
     // Background updated to Brand Off-white (#F7F9FB)
-    <section className="py-16 md:py-24 bg-[#F7F9FB]">
+    <section className="py-12 md:py-12 bg-[#F7F9FB]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Responsive Grid: 1 col on mobile, 2 on tablet, 3 on desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

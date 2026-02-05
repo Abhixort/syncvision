@@ -21,7 +21,7 @@ export default function ContactPage() {
       <ContactHero />
 
       {/* Info Cards Section - Standardized spacing and alignment */}
-      <section className="py-12 md:py-16 -mt-8 md:-mt-16 relative z-20">
+      <section className="py-12 md:py-12">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <Reveal>
@@ -42,7 +42,7 @@ export default function ContactPage() {
               <ContactInfoCard 
                 icon={<Clock size={24} />}
                 title="Working Hours"
-                detail="Mon - Sat: 9:00 AM - 6:00 PM"
+                detail="Mon - Fri: 9:00 AM - 6:00 PM"
               />
             </Reveal>
           </div>
@@ -50,7 +50,7 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section - Updated with brand styling */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-12">
         <div className="max-w-7xl mx-auto px-6">
           <Reveal>
             <div className="w-full h-[300px] md:h-[500px] bg-white rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl shadow-[#0F1C2E]/5 border border-white relative group">

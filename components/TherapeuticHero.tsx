@@ -11,7 +11,7 @@ export function TherapeuticHero() {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#2FB7DA]/10 rounded-full blur-[120px] -z-0 translate-x-1/2 -translate-y-1/2" />
       
       {/* Content Container: Left-aligned for mobile to match Home/About consistency */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 pt-20 lg:pt-0">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 py-12 lg:pt-0">
         <div className="max-w-3xl">
           <Reveal>
             {/* Standardized Brand Tag */}

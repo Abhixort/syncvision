@@ -10,7 +10,7 @@ export default function CareersPage() {
          <Navbar />
       <CareersHero />
       
-      <section className="py-24">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
           <JobRoles />
           <div className="lg:sticky lg:top-32">

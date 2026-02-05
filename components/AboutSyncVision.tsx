@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function AboutSyncVision() {
   return (
     // Updated background to the brand's Off-white (#F7F9FB)
-    <section className="bg-[#F7F9FB] py-16 md:py-24 overflow-hidden">
+    <section className="bg-[#F7F9FB] py-12 md:py-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
@@ -39,23 +39,34 @@ export default function AboutSyncVision() {
             </div>
           </Reveal>
 
-          {/* RIGHT: Image - Balanced for mobile aspect ratios */}
-          <Reveal className="relative mt-8 lg:mt-0">
-            <div className="relative mx-auto max-w-[500px] lg:max-w-none rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden border-[8px] sm:border-[12px] border-white shadow-2xl shadow-[#0F1C2E]/5">
-              <Image 
-                src="/assets/clinical-research-excellence.webp" 
-                alt="Clinical Research Excellence" 
-                width={600} 
-                height={500}
-                className="object-cover w-full h-auto"
-                priority={false}
-              />
-            </div>
-            
-            {/* Brand Accent Decorative Element */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#2FB7DA]/10 rounded-full blur-3xl -z-10" />
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-[#A3D65C]/10 rounded-full blur-2xl -z-10" />
-          </Reveal>
+          {/* RIGHT: Image - Refitted to Perfect Square Aspect */}
+<Reveal className="relative mt-12 lg:mt-0">
+  <div className="relative mx-auto w-full max-w-[500px]">
+    {/* Decorative Aura - matched to your pulse style */}
+    <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#2FB7DA]/10 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" />
+    
+    {/* Container: Applied aspect-square and standardized border-4 */}
+    <div className="relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-square bg-gray-100">
+      <Image 
+        src="/assets/clinical-research.png" 
+        alt="Clinical Research Excellence" 
+        fill
+        className="object-cover"
+        priority={false}
+      />
+    </div>
+    
+    {/* Brand Accent Decorative Elements - preserved but aligned to standard */}
+    <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#2FB7DA]/10 rounded-full blur-3xl -z-10" />
+    <div className="absolute -top-10 -left-10 w-32 h-32 bg-[#2FB7DA]/5 rounded-full blur-3xl -z-10" />
+    
+    {/* Optional: Innovation Badge to match the other square component */}
+    <div className="absolute -bottom-6 -right-6 bg-[#0F1C2E] px-5 py-3 rounded-xl shadow-xl hidden md:flex flex-col border border-white/10">
+      <p className="text-[#2FB7DA] font-black text-xl tracking-tighter">SyncVision</p>
+      <p className="text-white text-[10px] uppercase font-bold tracking-widest">Site Management</p>
+    </div>
+  </div>
+</Reveal>
         </div>
       </div>
     </section>

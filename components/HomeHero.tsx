@@ -12,7 +12,7 @@ export default function HomeHero() {
       <div className="absolute inset-0 bg-[#0F1C2E]/60" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0F1C2E] via-[#0F1C2E]/80 to-transparent lg:via-[#0F1C2E]/60" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20 lg:pt-0">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-12 lg:pt-0">
         <div className="max-w-3xl">
           <Reveal>
             {/* Adjusted Title Size for Mobile */}

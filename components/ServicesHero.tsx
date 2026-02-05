@@ -11,11 +11,11 @@ export function ServicesHero() {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#2FB7DA]/10 rounded-full blur-[120px] -z-0 translate-x-1/2 -translate-y-1/2" />
       
       {/* Content Container: Left-aligned for mobile to match HomeHero signature */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 pt-20 lg:pt-0">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 py-12 lg:pt-0">
         <div className="max-w-3xl">
           <Reveal>
             {/* Standardized Brand Tag using Lime (#A3D65C) for Innovation */}
-            <span className="text-[#A3D65C] font-bold uppercase tracking-[0.2em] text-xs md:text-sm">
+            <span className="text-[#2FB7DA] font-bold uppercase tracking-[0.2em] text-xs md:text-sm">
               Our Capabilities
             </span>
 

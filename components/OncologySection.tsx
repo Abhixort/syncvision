@@ -5,7 +5,7 @@ import { ShieldCheck, Activity, ClipboardCheck } from "lucide-react";
 export default function SiteManagementSection() {
   return (
     // Updated background to the brand's Off-white (#F7F9FB)
-    <section className="bg-[#F7F9FB] py-24 relative overflow-hidden">
+    <section className="bg-[#F7F9FB] py-20 relative overflow-hidden">
       
       {/* Decorative Brand Shape using Cyan Blue with low opacity */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-[#2FB7DA]/5 skew-x-12 transform origin-top translate-x-20 -z-10" />
@@ -13,28 +13,34 @@ export default function SiteManagementSection() {
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
 
         {/* LEFT: Image Section with Frame */}
-        <Reveal className="order-2 lg:order-1 relative">
-          <div className="relative group">
-            {/* Frame using Cyan Blue (#2FB7DA) */}
-            <div className="absolute -inset-4 border-2 border-[#2FB7DA]/20 rounded-2xl group-hover:border-[#2FB7DA]/40 transition-colors duration-500" />
-            
-            <div className="relative rounded-xl overflow-hidden shadow-xl bg-white">
-              <Image
-                src="/assets/oncology.avif"
-                alt="Clinical Site Management"
-                width={550}
-                height={550}
-                className="object-cover transition duration-700 group-hover:scale-105"
-              />
-              
-              {/* Floating Tag using Navy (#0F1C2E) background and Cyan Blue icon */}
-              <div className="absolute top-6 left-6 bg-[#0F1C2E]/90 backdrop-blur-md text-white px-4 py-2 rounded-lg flex items-center gap-2 border border-white/10">
-                <Activity className="w-4 h-4 text-[#2FB7DA]" />
-                <span className="text-xs font-bold uppercase tracking-wider">Site Operations</span>
-              </div>
-            </div>
-          </div>
-        </Reveal>
+<Reveal className="order-2 lg:order-1 relative mt-12 lg:mt-0">
+  <div className="relative mx-auto w-full max-w-[500px]">
+    {/* Consistent Frame: Matched pulse style decorative shape */}
+    <div className="absolute -top-6 -right-6 w-32 h-32 bg-[#2FB7DA]/10 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" />
+    
+    {/* Main Container: Applied aspect-square and standardized border-4 */}
+    <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white aspect-square bg-slate-50">
+      <Image
+        src="/assets/oncology.avif"
+        alt="Clinical Site Management"
+        fill
+        className="object-cover transition duration-700 group-hover:scale-110"
+      />
+      
+      {/* Brand Badge - Navy and Cyan sync */}
+      <div className="absolute top-6 left-6 z-20 bg-[#0F1C2E]/90 backdrop-blur-md text-white px-4 py-2 rounded-lg flex items-center gap-2 border border-white/10 shadow-lg">
+        <Activity className="w-4 h-4 text-[#2FB7DA]" />
+        <span className="text-[10px] font-black uppercase tracking-[0.15em]">Site Operations</span>
+      </div>
+    </div>
+
+    {/* Decorative Frame - Standardized for consistency with 'Perfect Component' logic */}
+    <div className="absolute -inset-4 border-2 border-[#2FB7DA]/10 rounded-[2.5rem] -z-10 group-hover:border-[#2FB7DA]/30 transition-colors duration-500" />
+    
+    {/* Subtle bottom-left aura */}
+    <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#2FB7DA]/5 rounded-full blur-3xl -z-20" />
+  </div>
+</Reveal>
 
         {/* RIGHT: Text Section */}
         <Reveal className="order-1 lg:order-2">
