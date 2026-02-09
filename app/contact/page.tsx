@@ -79,11 +79,11 @@ function ContactInfoCard({ icon, title, detail }: ContactInfoCardProps) {
   return (
     <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-xl shadow-[#0F1C2E]/5 border border-white flex flex-col items-center text-center group hover:border-[#2FB7DA]/40 transition-all duration-500 h-full">
       {/* Icon Container using Navy and Cyan Blue transition */}
-      <div className="w-14 h-14 bg-[#F7F9FB] text-[#2FB7DA] rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#0F1C2E] group-hover:text-white transition-all shadow-sm">
+      <div className="w-14 h-14 bg-[#F7F9FB] text-[#2FB7DA] rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[var(--syncvision-green)] group-hover:text-white transition-all shadow-sm">
         {icon}
       </div>
       
-      <h3 className="font-extrabold text-[#0F1C2E] mb-2 tracking-tight uppercase text-xs">
+      <h3 className="font-extrabold text-[var(--syncvision-green)] mb-2 tracking-tight uppercase text-xs">
         {title}
       </h3>
       

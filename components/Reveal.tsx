@@ -5,9 +5,11 @@ import { useEffect, useRef, useState, ReactNode } from "react";
 interface RevealProps {
   children: ReactNode;
   className?: string;
+  /** Optional delay in milliseconds for staggered animations */
+  delay?: number; 
 }
 
-export default function Reveal({ children, className = "" }: RevealProps) {
+export default function Reveal({ children, className = "", delay = 0 }: RevealProps) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState<boolean>(false);
 
@@ -15,23 +17,34 @@ export default function Reveal({ children, className = "" }: RevealProps) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setVisible(true);
+          // Add the delay before triggering the animation
+          setTimeout(() => {
+            setVisible(true);
+          }, delay);
           observer.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { 
+        // 0.15 threshold is often better for mobile visibility 
+        threshold: 0.15,
+        // RootMargin helps trigger the animation slightly before it hits the viewport
+        rootMargin: "0px 0px -50px 0px" 
+      }
     );
 
     if (ref.current) observer.observe(ref.current);
 
     return () => observer.disconnect();
-  }, []);
+  }, [delay]);
 
   return (
     <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out
-        ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}
+      style={{ 
+        transitionDelay: `${delay}ms` 
+      }}
+      className={`transition-all duration-1000 cubic-bezier(0.22, 1, 0.36, 1)
+        ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
         ${className}`}
     >
       {children}

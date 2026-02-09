@@ -8,18 +8,17 @@ export default function MissionVision() {
     // Updated to Brand Background: Off-white (#F7F9FB)
     <section className="bg-[#F7F9FB] py-12 md:py-12">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Added gap-6 for mobile and md:grid-cols-2 for tablet+ */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12">
           
-          {/* Mission Card */}
+          {/* Mission Card: Focused on Green/Teal */}
           <Reveal>
-            <div className="h-full bg-white p-8 sm:p-10 lg:p-14 rounded-[2rem] sm:rounded-[3rem] shadow-sm border border-slate-100 hover:border-[#2FB7DA]/40 transition-all duration-500 group">
-              {/* Icon Container - Using Navy and Cyan Blue transition */}
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#F7F9FB] text-[#2FB7DA] rounded-2xl flex items-center justify-center mb-6 sm:mb-8 group-hover:bg-[#0F1C2E] group-hover:text-white transition-all shadow-sm">
+            <div className="h-full bg-white p-8 sm:p-10 lg:p-14 rounded-[2rem] sm:rounded-[3rem] shadow-sm border border-slate-100 hover:border-syncvision-teal/40 transition-all duration-500 group">
+              {/* Icon Container: Transitioning to SyncVision Green */}
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#F7F9FB] text-[var(--syncvision-teal)] rounded-2xl flex items-center justify-center mb-6 sm:mb-8 group-hover:bg-[var(--syncvision-green)] group-hover:text-white transition-all shadow-sm">
                 <Target className="w-7 h-7 sm:w-8 sm:h-8" />
               </div>
               
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0F1C2E] mb-4 sm:mb-6 tracking-tight uppercase text-xs">
+              <h3 className="text-xs font-extrabold text-[var(--syncvision-green)] mb-4 sm:mb-6 tracking-[0.2em] uppercase">
                 Our Mission
               </h3>
               
@@ -29,15 +28,15 @@ export default function MissionVision() {
             </div>
           </Reveal>
 
-          {/* Vision Card */}
+          {/* Vision Card: Focused on Gold */}
           <Reveal>
-            <div className="h-full bg-white p-8 sm:p-10 lg:p-14 rounded-[2rem] sm:rounded-[3rem] shadow-sm border border-slate-100 hover:border-[#A3D65C]/40 transition-all duration-500 group">
-              {/* Icon Container - Using Navy and Lime transition */}
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#F7F9FB] text-[#2FB7DA] rounded-2xl flex items-center justify-center mb-6 sm:mb-8 group-hover:bg-[#A3D65C] group-hover:text-[#0F1C2E] transition-all shadow-sm">
+            <div className="h-full bg-white p-8 sm:p-10 lg:p-14 rounded-[2rem] sm:rounded-[3rem] shadow-sm border border-slate-100 hover:border-[var(--syncvision-gold)]/40 transition-all duration-500 group">
+              {/* Icon Container: Transitioning to SyncVision Gold */}
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#F7F9FB] text-[var(--syncvision-teal)] rounded-2xl flex items-center justify-center mb-6 sm:mb-8 group-hover:bg-[var(--syncvision-green)] group-hover:text-white transition-all shadow-sm">
                 <Eye className="w-7 h-7 sm:w-8 sm:h-8" />
               </div>
               
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0F1C2E] mb-4 sm:mb-6 tracking-tight uppercase text-xs">
+              <h3 className="text-xs font-extrabold text-[var(--syncvision-green)] mb-4 sm:mb-6 tracking-[0.2em] uppercase">
                 Our Vision
               </h3>
               

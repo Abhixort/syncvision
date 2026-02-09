@@ -79,6 +79,28 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  /* --syncvision-green: #0A4D44;
+  --syncvision-gold: #FFBF3F;
+  --syncvision-teal: #125E54;
+  --syncvision-green-rgb: 10 77 68;
+
+  --syncvision-teal-rgb: 18 94 84; */
+
+  /* Primary brand colors */
+  --syncvision-green: #0A4D44;        
+  --syncvision-teal:  #125E54;     
+  --syncvision-background-teal: #40847c;   
+  --syncvision-gold:  #FFBF3F;       
+
+  /* RGB versions (for opacity utilities) */
+  --syncvision-green-rgb: 10 77 68;
+  --syncvision-teal-rgb:  18 94 84;
+  --syncvision-gold-rgb:  255 191 63;
+
+  /* UI neutrals (recommended additions) */
+  --syncvision-bg-dark:   #050B0A;
+  --syncvision-text-main: #E6F2F0;
+  --syncvision-text-muted:#9FB8B4;
 }
 
 .dark {
