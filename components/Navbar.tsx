@@ -29,6 +29,7 @@ export default function Navbar() {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
+  // RESTORED: Gold color logic for text and underlines
   const navLinkClass = (href: string) =>
     `relative pb-1 transition-colors duration-300 font-semibold tracking-tight
      after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-[var(--syncvision-gold)]
@@ -41,35 +42,32 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 z-50 w-full transition-all duration-500
         ${scrolled 
-            ? "bg-[var(--syncvision-green)]/95 backdrop-blur-md py-3 shadow-xl border-b border-[var(--syncvision-teal)]/20" 
-            : "bg-transparent py-5 border-b border-transparent"}`}
+            ? "bg-[var(--syncvision-green)]/95 backdrop-blur-md py-2 shadow-xl border-b border-white/10" 
+            : "bg-transparent py-4 border-b border-transparent"}`}
       >
-        <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-500">
+        <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           
-        <Link href="/" className="relative flex items-center group">
-          <div className={`relative transition-all duration-500 ${
-            /* Increased heights to give the logo more vertical 'breathing room' */
-            scrolled 
-              ? "w-60 h-16 md:w-64 md:h-18" 
-              : "w-80 h-24 md:w-96 md:h-28"
-          }`}>
-            <Image 
-              src="/assets/SyncVisionLogo5.png" 
-              alt="SyncVision Logo" 
-              fill
-              /* 'object-contain' ensures it never cuts off. 
-                'object-left' keeps it aligned with your container edge. */
-              className={`object-contain object-left transition-all duration-500 ${
-                scrolled ? "brightness-0 invert" : ""
-              }`}              
-              priority
-            />
-          </div>
-        </Link>
+          <Link href="/" className="relative flex items-center group -ml-2">
+            <div className={`relative transition-all duration-500 ${
+              scrolled 
+                ? "w-48 h-12 md:w-56 md:h-14" 
+                : "w-64 h-16 md:w-80 md:h-20"
+            }`}>
+              <Image 
+                src="/assets/SyncVisionLogo5.png" 
+                alt="SyncVision Logo" 
+                fill
+                className={`object-contain object-left transition-all duration-500 ${
+                  scrolled ? "brightness-0 invert" : ""
+                }`}              
+                priority
+              />
+            </div>
+          </Link>
 
           <ul className="hidden lg:flex items-center gap-8 text-sm xl:text-base font-medium">
             {navLinks.map((link) => (
-              <li key={link.href}>
+              <li key={link.href} className="flex items-center">
                 <Link href={link.href} className={navLinkClass(link.href)}>
                   {link.name}
                 </Link>
@@ -79,6 +77,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setOpen(true)}
+            /* RESTORED: Gold hover for mobile menu button */
             className="cursor-pointer lg:hidden text-white text-3xl p-2 hover:text-[var(--syncvision-gold)] transition-colors"
           >
             ☰
@@ -90,14 +89,13 @@ export default function Navbar() {
       <div className={`fixed inset-0 z-[100] bg-[var(--syncvision-green)] text-white transition-all duration-500 transform flex flex-col
         ${open ? "translate-x-0" : "translate-x-full"}`}>
         
-        <div className="flex items-center justify-between min-h-[90px] px-6 border-b border-white/10">
-          {/* MOBILE LOGO: Also increased for readability */}
-          <div className="relative w-56 h-14">
+        <div className="flex items-center justify-between min-h-[80px] px-6 border-b border-white/10">
+          <div className="relative w-56 h-12">
              <Image 
                 src="/assets/SyncVisionLogo5.png" 
                 alt="SyncVision Logo" 
                 fill
-                className="object-contain object-left"
+                className="object-contain object-left brightness-0 invert"
               />
           </div>
           <button onClick={() => setOpen(false)} className="cursor-pointer text-3xl p-2 hover:text-[var(--syncvision-gold)] transition-colors">✕</button>
@@ -110,6 +108,7 @@ export default function Navbar() {
                 key={link.href} 
                 onClick={() => setOpen(false)} 
                 href={link.href} 
+                /* RESTORED: Gold highlights for active mobile links */
                 className={`transition-all border-l-2 pl-4 py-1.5 ${
                   pathname === link.href 
                   ? "text-[var(--syncvision-gold)] border-[var(--syncvision-gold)] bg-[var(--syncvision-gold)]/5" 
@@ -122,7 +121,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="p-6 text-center border-t border-white/5 bg-[var(--syncvision-teal)]/20">
+        <div className="p-6 text-center border-t border-white/5 bg-white/5">
              <p className="text-[10px] uppercase tracking-[0.3em] text-[var(--syncvision-gold)] font-black">
                 Reliable • Compliant • Quality
              </p>
