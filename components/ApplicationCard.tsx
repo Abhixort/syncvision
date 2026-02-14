@@ -24,11 +24,8 @@ export function ApplicationCard() {
             bg-[var(--syncvision-gold)]
             text-[var(--syncvision-green)]
             font-bold
-            py-4 rounded-xl
-            transition-all transform hover:scale-[1.02]
-            hover:brightness-110
-            shadow-[0_10px_25px_rgb(var(--syncvision-gold-rgb)_/_0.25)]
-          "
+            py-4 rounded-xl border-1 border-[var(--syncvision-gold)]
+            transition-all transform hover:bg-white/5 hover:text-white  hover:backdrop-blur-sm"
         >
           <Mail className="w-5 h-5" />
           Email your CV

@@ -13,10 +13,6 @@ export function TherapeuticHero() {
       <div className="relative z-10 max-w-7xl mx-auto w-full px-6 py-12 lg:pt-0">
         <div className="max-w-3xl">
           <Reveal>
-            {/* Brand Tag using Gold for a premium feel */}
-            <span className=" font-bold uppercase tracking-[0.2em] text-xs md:text-sm">
-              Clinical Reach
-            </span>
 
             {/* Title with Gold highlight */}
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-[1.2] text-white tracking-tight mt-6">

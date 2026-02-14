@@ -29,7 +29,6 @@ export default function Navbar() {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
-  // RESTORED: Gold color logic for text and underlines
   const navLinkClass = (href: string) =>
     `relative pb-1 transition-colors duration-300 font-semibold tracking-tight
      after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-[var(--syncvision-gold)]
@@ -48,13 +47,14 @@ export default function Navbar() {
         <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           
           <Link href="/" className="relative flex items-center group -ml-2">
+            {/* UPDATED: Desktop sizes (md:) slightly decreased; Mobile sizes maintained */}
             <div className={`relative transition-all duration-500 ${
               scrolled 
-                ? "w-48 h-12 md:w-56 md:h-14" 
-                : "w-64 h-16 md:w-80 md:h-20"
+                ? "w-40 h-10 md:w-56 md:h-14" // Scrolled: Mobile stays w-40, Desktop now w-56
+                : "w-48 h-12 md:w-80 md:h-20" // Top: Mobile stays w-48, Desktop now w-80
             }`}>
               <Image 
-                src="/assets/SyncVisionLogo5.png" 
+                src="/assets/SyncVisionLogo6.png" 
                 alt="SyncVision Logo" 
                 fill
                 className={`object-contain object-left transition-all duration-500 ${
@@ -77,7 +77,6 @@ export default function Navbar() {
 
           <button
             onClick={() => setOpen(true)}
-            /* RESTORED: Gold hover for mobile menu button */
             className="cursor-pointer lg:hidden text-white text-3xl p-2 hover:text-[var(--syncvision-gold)] transition-colors"
           >
             ☰
@@ -90,9 +89,9 @@ export default function Navbar() {
         ${open ? "translate-x-0" : "translate-x-full"}`}>
         
         <div className="flex items-center justify-between min-h-[80px] px-6 border-b border-white/10">
-          <div className="relative w-56 h-12">
+          <div className="relative w-44 h-12">
              <Image 
-                src="/assets/SyncVisionLogo5.png" 
+                src="/assets/SyncVisionLogo6.png" 
                 alt="SyncVision Logo" 
                 fill
                 className="object-contain object-left brightness-0 invert"
@@ -108,7 +107,6 @@ export default function Navbar() {
                 key={link.href} 
                 onClick={() => setOpen(false)} 
                 href={link.href} 
-                /* RESTORED: Gold highlights for active mobile links */
                 className={`transition-all border-l-2 pl-4 py-1.5 ${
                   pathname === link.href 
                   ? "text-[var(--syncvision-gold)] border-[var(--syncvision-gold)] bg-[var(--syncvision-gold)]/5" 

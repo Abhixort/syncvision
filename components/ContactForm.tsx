@@ -149,7 +149,8 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="cursor-pointer w-full bg-[var(--syncvision-gold)] text-[var(--syncvision-green)] py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:brightness-110 transition-all transform hover:scale-[1.01] shadow-lg shadow-[0_4px_20px_rgb(var(--syncvision-gold-rgb)_/_0.2)] disabled:opacity-50 disabled:cursor-not-allowed"
+        className="cursor-pointer w-full bg-[var(--syncvision-gold)] text-[var(--syncvision-green)] py-4 rounded-xl font-bold flex items-center justify-center gap-3 border-1 border-[var(--syncvision-gold)]
+            transition-all transform hover:bg-white/5 hover:text-white  hover:backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isSubmitting ? (
           <div className="w-6 h-6 border-2 border-[var(--syncvision-green)]/30 border-t-[var(--syncvision-green)] rounded-full animate-spin" />

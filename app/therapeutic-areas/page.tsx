@@ -5,40 +5,47 @@ import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 
 export default function TherapeuticAreasPage() {
+  // Shared button base styles matching Home Hero logic
+  const btnBase = "cursor-pointer w-full sm:w-auto inline-flex justify-center items-center rounded-full px-10 py-4 text-sm font-bold transition-all duration-300 shadow-lg border-2";
+  
+  // Primary: Solid Gold -> Transparent on hover (matching Home Hero)
+  // Updated hover for light background: text turns Green, border turns Green
+  const btnPrimary = `${btnBase} bg-[var(--syncvision-gold)] border-[var(--syncvision-gold)] text-[var(--syncvision-green)] hover:bg-transparent hover:text-[var(--syncvision-green)] hover:border-[var(--syncvision-green)]`;
+
+  // Secondary: Transparent/Glass -> Solid Gold on hover (matching Home Hero)
+  // Updated for light background: starts with Green border/text
+  const btnSecondary = `${btnBase} bg-transparent border-[var(--syncvision-green)] text-[var(--syncvision-green)] hover:bg-[var(--syncvision-gold)] hover:text-[var(--syncvision-green)] hover:border-[var(--syncvision-gold)]`;
+
   return (
     <main className="bg-[var(--syncvision-green)]">
       <Navbar />
       <TherapeuticHero />
       <SpecialtyGrid />
       
-      {/* CTA Section - Standardized for Brand Option 2 */}
-      <section className="py-12 bg-[var(--syncvision-green)] relative overflow-hidden">
-        {/* Subtle Brand Accent Background */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--syncvision-green)]/10 blur-[120px] rounded-full -z-0" />
+      {/* CTA Section - High Contrast Background */}
+      <section className="py-24 bg-[#F7F9FB] relative overflow-hidden">
+        
+        {/* Subtle decorative element to keep it premium */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--syncvision-gold)]/20 to-transparent" />
         
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <Reveal>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">
-              Need expertise in <span className="">another area?</span>
+            {/* Text colors changed to Green/Dark for the light background */}
+            <h2 className="text-3xl md:text-5xl font-extrabold text-[var(--syncvision-green)] mb-6 tracking-tight">
+              Need expertise in <span className="text-[var(--syncvision-gold)]">another area?</span>
             </h2>
             
-            <p className="text-[#F7F9FB]/70 mb-10 text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-light">
+            <p className="text-[var(--syncvision-green)]/70 mb-12 text-base md:text-xl leading-relaxed max-w-2xl mx-auto font-medium">
               While we specialize in the areas above, our investigator network is constantly expanding. 
               Contact us to discuss your specific protocol requirements and site feasibility.
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a 
-                href="/contact" 
-                className="w-full sm:w-auto inline-block bg-[#2FB7DA] bg-[var(--syncvision-gold)] px-10 py-4 rounded-full font-bold hover:brightness-110 transition-all shadow-lg shadow-[var(--syncvision-gold)]/20 transform hover:-translate-y-1"
-              >
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+              <a href="/contact" className={btnPrimary}>
                 Inquire About Site Feasibility
               </a>
               
-              <a 
-                href="/services" 
-                className="w-full sm:w-auto inline-block bg-white/5 backdrop-blur-md border border-white/10 text-white px-10 py-4 rounded-full font-bold hover:bg-white/10 transition-all"
-              >
+              <a href="/services" className={btnPrimary}>
                 View SMO Services
               </a>
             </div>

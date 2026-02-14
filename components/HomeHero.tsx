@@ -2,8 +2,11 @@ import Link from "next/link";
 import Reveal from "./Reveal";
 
 export default function HomeHero() {
+  // Shared classes for consistent button styling
+  const btnBase = "cursor-pointer w-full sm:w-auto inline-flex justify-center items-center rounded-full px-8 py-3 md:py-4 text-sm font-bold transition-all duration-300 shadow-lg border-1 border-[var(--syncvision-gold)]";
+  const btnPrimary = `${btnBase} bg-[var(--syncvision-gold)] text-[var(--syncvision-green)] hover:bg-white/10 hover:backdrop-blur-md hover:text-white`;
+
   return (
-    // Updated background to SyncVision Green (#0A4D44)
     <section className="relative min-h-[90vh] lg:min-h-[85vh] flex items-center overflow-hidden bg-[var(--syncvision-green)]">
       
       {/* Background Image */}
@@ -19,13 +22,11 @@ export default function HomeHero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-12 lg:pt-0">
         <div className="max-w-3xl">
           <Reveal>
-            {/* Title: Using SyncVision Gold for the brand highlight */}
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-[1.2] text-white tracking-tight">
               Sync<span className="">Vision</span> <br className="hidden sm:block" />
               Research Solution LLP
             </h1>
 
-            {/* Tagline: Signature left border using Gold */}
             <h2 className="mt-4 sm:mt-6 text-lg sm:text-xl md:text-2xl font-medium text-[#F7F9FB] leading-snug border-l-4 border-[var(--syncvision-gold)] pl-4">
                 Where Vision meets integrity 
             </h2>
@@ -37,15 +38,13 @@ export default function HomeHero() {
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link href="/about" className="w-full sm:w-auto">
-                {/* Primary Button: SyncVision Gold with Green text */}
-                <button className="cursor-pointer w-full sm:w-auto inline-flex justify-center items-center rounded-full bg-[var(--syncvision-gold)] px-8 py-3 md:py-4 text-sm font-bold text-[var(--syncvision-green)] hover:brightness-110 transition-all shadow-lg">
+                <button className={btnPrimary}>
                   Know More
                 </button>
               </Link>
 
               <Link href="/services" className="w-full sm:w-auto">
-                {/* Secondary Button: Glassmorphism style preserved but themed */}
-                <button className="cursor-pointer w-full sm:w-auto inline-flex justify-center items-center rounded-full bg-white/5 backdrop-blur-md border border-white/20 px-8 py-3 md:py-4 text-sm font-bold text-white hover:bg-white/10 transition-all">
+                <button className={btnPrimary}>
                   Our Services
                 </button>
               </Link>
