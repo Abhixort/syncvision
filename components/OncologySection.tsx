@@ -6,98 +6,98 @@ import { ShieldCheck, Activity, ClipboardCheck } from "lucide-react";
 
 export default function SiteManagementSection() {
   return (
-    // Updated background to the brand's Off-white (#F7F9FB)
-    <section className="bg-[#F7F9FB] py-20 relative overflow-hidden">
+    // Responsive padding: pt-32 on mobile/mid-devices to clear fixed Navbar
+    <section className="bg-[#F7F9FB] pt-32 pb-20 md:pt-40 lg:py-24 relative overflow-hidden">
       
-      {/* Decorative Brand Shape using SyncVision Teal with low opacity */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-syncvision-teal/5 skew-x-12 transform origin-top translate-x-20 -z-10" />
+      {/* Decorative Shape - Flipped to the left side to match the new layout */}
+      <div className="absolute top-0 left-0 w-1/3 h-full bg-syncvision-teal/5 -skew-x-12 transform origin-top -translate-x-20 -z-10" />
 
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-        {/* LEFT: Image Section with Frame */}
-        <Reveal className="order-2 lg:order-1 relative mt-12 lg:mt-0">
+        {/* LEFT: Image Section (Now first in grid, order-1 for all screens) */}
+        <Reveal className="order-1 relative w-full">
           <div className="relative mx-auto w-full max-w-[500px]">
-            {/* Consistent Frame: Matched pulse style decorative shape in Teal */}
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-syncvision-teal/10 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" />
+            {/* Standardized Brand Glow */}
+            <div className="absolute -top-6 -left-6 w-32 h-32 bg-syncvision-teal/10 rounded-full blur-2xl animate-pulse" />
             
-            {/* Main Container: Applied aspect-square and standardized border-4 */}
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white aspect-square bg-slate-50">
+            {/* Main Image Frame - Standardized border and aspect ratio */}
+            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-square bg-slate-100 group">
               <Image
                 src="/assets/oncology.avif"
-                alt="Clinical Site Management"
+                alt="Clinical Site Management Operations"
                 fill
-                className="object-cover transition duration-700 group-hover:scale-110"
+                className="object-cover transition duration-700 group-hover:scale-105"
               />
               
-              {/* Brand Badge - SyncVision Green and Gold sync */}
-              <div className="absolute top-6 left-6 z-20 bg-[var(--syncvision-green)]/90 backdrop-blur-md text-white px-4 py-2 rounded-lg flex items-center gap-2 border border-white/10 shadow-lg">
-                <Activity className="w-4 h-4 text-[var(--syncvision-green)]" />
-                <span className="text-[10px] font-black uppercase tracking-[0.15em]">Site Operations</span>
+              {/* Site Ops Badge */}
+              <div className="absolute top-6 right-6 z-20 bg-[var(--syncvision-green)]/90 backdrop-blur-md text-white px-4 py-2 rounded-xl flex items-center gap-2 border border-white/10 shadow-lg">
+                <Activity className="w-4 h-4 text-[var(--syncvision-gold)]" />
+                <span className="text-[10px] font-bold uppercase tracking-widest text-white">Site Operations</span>
               </div>
             </div>
 
-            {/* Decorative Frame - Standardized Teal border */}
-            <div className="absolute -inset-4 border-2 border-syncvision-teal/10 rounded-[2.5rem] -z-10 group-hover:border-syncvision-teal/30 transition-colors duration-500" />
-            
-            {/* Subtle bottom-left aura */}
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-syncvision-teal/5 rounded-full blur-3xl -z-20" />
+            {/* Decorative outer frame */}
+            <div className="absolute -inset-4 border-2 border-syncvision-teal/5 rounded-[3rem] -z-10" />
           </div>
         </Reveal>
 
-        {/* RIGHT: Text Section */}
-        <Reveal className="order-1 lg:order-2">
+        {/* RIGHT: Text Section (Now second in grid) */}
+        <Reveal className="order-2 max-w-3xl">
           <div className="space-y-6">
             {/* Badge using SyncVision Teal */}
-            <div className="flex items-center gap-2 text-[var(--syncvision-teal)] font-bold text-sm uppercase tracking-widest">
-              <ShieldCheck className="w-5 h-5" />
+            <div className="flex items-center gap-2 text-[var(--syncvision-teal)] font-bold text-[10px] sm:text-xs uppercase tracking-[0.2em]">
+              <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" />
               Operational Excellence
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-extrabold text-[var(--syncvision-green)] leading-[1.15]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[var(--syncvision-green)] leading-[1.15] tracking-tight">
               Reliable & Compliant <br /> 
-              {/* Underline using SyncVision Gold */}
               <span className="text-[var(--syncvision-green)] underline decoration-[var(--syncvision-gold)] decoration-4 underline-offset-8">Site Operations</span>
             </h2>
 
             <div className="space-y-6 mt-8">
-              <p className="text-slate-600 leading-relaxed text-lg font-light">
-                SyncVision Research Solution LLP delivers <span className="text-[var(--syncvision-green)] font-medium italic">structured, process-driven</span> site management services that support high-quality clinical trial execution. 
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base md:text-lg font-light">
+                SyncVision Research Solution LLP delivers <span className="text-[var(--syncvision-green)] font-medium">structured, process-driven</span> site management services that support high-quality clinical trial execution across India.
               </p>
 
               <div className="grid gap-6">
-                <div className="flex gap-4 p-4 rounded-xl hover:bg-white transition-all shadow-transparent hover:shadow-sm">
-                    {/* Icon Container using SyncVision Teal palette */}
-                    <div className="flex-shrink-0 w-12 h-12 bg-syncvision-teal/10 rounded-lg flex items-center justify-center">
+                {/* Feature Card */}
+                <div className="flex gap-4 p-5 bg-white rounded-2xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
+                    <div className="flex-shrink-0 w-12 h-12 bg-syncvision-teal/10 rounded-xl flex items-center justify-center">
                         <ClipboardCheck className="text-[var(--syncvision-teal)] w-6 h-6" />
                     </div>
                     <div>
-                        <p className="text-slate-700 leading-relaxed text-sm md:text-base">
-                            Our experienced clinical research professionals ensure sites are fully prepared, 
-                            compliant, and aligned with study protocols from initiation through close-out.
+                        <h4 className="text-[var(--syncvision-green)] font-bold text-sm uppercase tracking-wider mb-1">Our Approach</h4>
+                        <p className="text-slate-600 leading-relaxed text-sm">
+                            We operate with strict adherence to ICH-GCP guidelines, ensuring transparency, accountability, and excellence in every project we manage.
                         </p>
                     </div>
                 </div>
 
-                {/* Border using Gold for a progressive touch */}
-                <p className="text-slate-700 leading-relaxed text-sm md:text-base pl-16 border-l-2 border-[var(--syncvision-gold)] italic">
-                    By working closely with Sponsors and CROs, we enable smooth study execution, 
-                    maintain strong oversight of site activities, and uphold strict regulatory and ethical standards.
-                </p>
+                {/* Left Border Signature Style matching HomeHero reference */}
+                <div className="border-l-4 border-[var(--syncvision-gold)] pl-6 py-1">
+                    <p className="text-[var(--syncvision-green)] font-bold italic text-sm md:text-base">
+                        Integrity. Precision. Partnership.
+                    </p>
+                    <p className="text-slate-500 text-xs md:text-sm mt-1">
+                        Ensuring ethical conduct while maintaining operational efficiency.
+                    </p>
+                </div>
               </div>
 
-              {/* Data Highlights using Green and Slate */}
-              <div className="flex flex-wrap gap-6 pt-6 border-t border-slate-200">
+              {/* Data Highlights Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-slate-200">
                 <div className="flex flex-col">
-                    <span className="text-[var(--syncvision-green)] font-bold">Data Integrity</span>
-                    <span className="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Guaranteed</span>
+                    <span className="text-[var(--syncvision-green)] font-extrabold text-base md:text-lg">Data Integrity</span>
+                    <span className="text-[10px] text-slate-400 uppercase tracking-widest font-black">Guaranteed</span>
                 </div>
-                <div className="flex flex-col border-l border-slate-200 pl-6">
-                    <span className="text-[var(--syncvision-green)] font-bold">Patient Safety</span>
-                    <span className="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Primary Priority</span>
+                <div className="flex flex-col sm:border-l border-slate-200 sm:pl-6">
+                    <span className="text-[var(--syncvision-green)] font-extrabold text-base md:text-lg">Patient Safety</span>
+                    <span className="text-[10px] text-slate-400 uppercase tracking-widest font-black">Primary Priority</span>
                 </div>
-                <div className="flex flex-col border-l border-slate-200 pl-6">
-                    <span className="text-[var(--syncvision-green)] font-bold">Timelines</span>
-                    <span className="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Strict Adherence</span>
+                <div className="flex flex-col sm:border-l border-slate-200 sm:pl-6">
+                    <span className="text-[var(--syncvision-green)] font-extrabold text-base md:text-lg">Timelines</span>
+                    <span className="text-[10px] text-slate-400 uppercase tracking-widest font-black">Strict Adherence</span>
                 </div>
               </div>
             </div>

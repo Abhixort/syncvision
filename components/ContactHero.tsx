@@ -17,55 +17,77 @@ const ContactForm = dynamic(() => import("./ContactForm"), {
 
 export default function ContactHero() {
   return (
-    <section className="relative min-h-screen lg:min-h-[85vh] flex items-center bg-[var(--syncvision-green)] text-white pt-32 pb-16 md:pt-36 lg:pt-0 lg:pb-0 overflow-hidden">
+    /* FIXED VIEWPORT: min-h-[100svh] ensures no cutoff on Nest Hub.
+       FIXED PADDING: pt-28/md:pt-36 clears the Navbar on mid-sized landscape screens.
+    */
+    <section className="relative min-h-[100svh] lg:min-h-[90vh] flex flex-col lg:flex-row items-center bg-[var(--syncvision-green)] text-white pt-28 pb-16 md:pt-36 lg:pt-12 lg:pb-0 overflow-hidden">
       
       {/* Background Decoration */}
-      <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#125E54]/20 rounded-full blur-[80px] md:blur-[120px] -z-0 translate-x-1/3 -translate-y-1/3" />
+      {/* <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#125E54]/20 rounded-full blur-[80px] md:blur-[120px] -z-0 translate-x-1/3 -translate-y-1/3" /> */}
+
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('assets/contact-background.png')" }}
+      />
+      <div className="absolute inset-0 bg-[var(--syncvision-background-teal)]/60" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[var(--syncvision-background-teal)] via-[rgb(var(--syncvision-teal-rgb)_/_0.8)] to-transparent lg:via-[rgb(var(--syncvision-teal-rgb)_/_0.6)]" />
+
+      {/* contact-background.png */}
       
-      <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
+      <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center relative z-10">
         
-        {/* Left Column: order-1 ensures text stays on TOP for mobile */}
-        <div className="text-left max-w-3xl order-1 lg:order-1">
+        {/* Left Column */}
+        <div className="text-left max-w-3xl order-1">
           <Reveal>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] text-white tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.1] text-white tracking-tight">
               Let's execute <br className="hidden sm:block" />
-              <span className="">Better Trials.</span>
+              <span className="text-[var(--syncvision-gold)]">Better Trials.</span>
             </h1>
 
-            <h2 className="mt-6 text-lg sm:text-xl md:text-2xl font-medium text-[#F7F9FB] leading-snug border-l-4 border-[var(--syncvision-gold)] pl-4">
-                Partner with SyncVision 
+            <h2 className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-[#F7F9FB] leading-snug border-l-4 border-[var(--syncvision-gold)] pl-4">
+                Partner with SyncVision
             </h2>
 
-            <p className="mt-6 text-sm sm:text-base md:text-lg text-[#F7F9FB]/80 leading-relaxed max-w-2xl font-light">
-              We provide reliable, ICH-GCP compliant site management services 
-              tailored to support your clinical study needs across India.
+            <p className="mt-4 text-xs sm:text-sm md:text-base lg:text-lg text-[#F7F9FB]/70 leading-relaxed max-w-xl font-light">
+              Reliable, ICH-GCP compliant site management tailored to your clinical study needs. Reach out to our regional hubs in Pune, Thane, or Patna.
             </p>
             
-            <div className="mt-10 flex flex-col gap-4">
-               <p className="text-white/40 text-[10px] sm:text-xs uppercase tracking-[0.3em] font-bold">
-                 Official Correspondence
+            <div className="mt-8 flex flex-col gap-2">
+               <p className="text-white/40 text-[9px] sm:text-[10px] uppercase tracking-[0.3em] font-bold">
+                 Direct Correspondence
                </p>
                <a 
-                 href="mailto:aishwarya.singh@syncvisionresearch.com" 
-                 className="text-base sm:text-lg md:text-2xl font-light hover:text-[var(--syncvision-gold)] transition-colors break-all lg:break-normal"
+                 href="mailto:info@syncvisionresearch.com" 
+                 className="text-lg sm:text-xl md:text-2xl font-light text-[var(--syncvision-gold)] hover:text-white transition-colors break-all"
                >
-                  aishwarya.singh@syncvisionresearch.com
+                  info@syncvisionresearch.com
                </a>
             </div>
           </Reveal>
         </div>
 
-        {/* Right Column: order-2 ensures form stays BELOW text on mobile */}
-        <div className="order-2 lg:order-2 w-full max-w-xl lg:max-w-none">
+        {/* Right Column: Form Container */}
+        {/* <div className="order-2 w-full max-w-xl lg:max-w-none pb-10 lg:pb-0">
           <Reveal>
-            <div className="bg-white/5 backdrop-blur-md p-6 sm:p-8 md:p-10 rounded-[2rem] border border-white/10 shadow-2xl shadow-black/20">
+            <div className="bg-white/5 backdrop-blur-md p-6 sm:p-8 rounded-[2rem] border border-white/10 shadow-2xl">
+              <ContactForm />
+            </div>
+          </Reveal>
+        </div> */}
+
+        <div className="order-2 w-full max-w-xl lg:max-w-none pb-10 lg:pb-0">
+          <Reveal>
+            {/* Switched to Solid White for maximum visibility */}
+            <div className="bg-white p-6 sm:p-10 rounded-[1rem] border border-slate-100 shadow-2xl shadow-[var(--syncvision-green)]/20 relative overflow-hidden">
+              {/* Subtle brand accent line at the top */}
+              {/* <div className="absolute top-0 left-0 right-0 h-2 bg-[var(--syncvision-gold)]" /> */}
               <ContactForm />
             </div>
           </Reveal>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--syncvision-green)] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--syncvision-green)] to-transparent pointer-events-none" />
     </section>
   );
 }

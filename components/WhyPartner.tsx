@@ -1,0 +1,60 @@
+"use client";
+
+import { Map, ShieldCheck, Heart, Database, MessageSquare } from "lucide-react";
+import Reveal from "./Reveal";
+
+const benefits = [
+  {
+    title: "Multi-City Presence",
+    desc: "Strategically located in Pune, Thane, and Patna for faster site activation and diverse patient access.",
+    icon: <Map className="w-6 h-6" />
+  },
+  {
+    title: "Regulatory Expertise",
+    desc: "Seamless Ethics Committee submissions and compliance management ensuring smooth study progression.",
+    icon: <ShieldCheck className="w-6 h-6" />
+  },
+  {
+    title: "Patient-Centric",
+    desc: "Prioritizing ethical recruitment and retention strategies while safeguarding data integrity.",
+    icon: <Heart className="w-6 h-6" />
+  },
+  {
+    title: "Quality Focus",
+    desc: "Structured SOP-driven processes strictly aligned with ICH-GCP and national guidelines.",
+    icon: <Database className="w-6 h-6" />
+  },
+  {
+    title: "Transparent Flow",
+    desc: "Proactive updates and solution-oriented problem solving for real-time trial coordination.",
+    icon: <MessageSquare className="w-6 h-6" />
+  }
+];
+
+export function WhyPartner() {
+  return (
+    <section className="py-20 bg-[#F7F9FB]">
+      <div className="max-w-7xl mx-auto px-6">
+        <Reveal className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--syncvision-green)] border-l-4 border-[var(--syncvision-gold)] pl-6">
+            Why Partner With <span className="text-[var(--syncvision-teal)]">SyncVision?</span>
+          </h2>
+        </Reveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {benefits.map((item, i) => (
+            <Reveal key={i} delay={i * 100}>
+              <div className="bg-white p-8 rounded-[2rem] border border-slate-100 hover:border-[var(--syncvision-gold)]/30 transition-all group h-full shadow-sm">
+                <div className="w-12 h-12 bg-[#F7F9FB] text-[var(--syncvision-teal)] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[var(--syncvision-green)] group-hover:text-[var(--syncvision-gold)] transition-all">
+                  {item.icon}
+                </div>
+                <h3 className="text-lg font-bold text-[var(--syncvision-green)] mb-3">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed font-light">{item.desc}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

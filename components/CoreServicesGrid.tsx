@@ -1,66 +1,80 @@
 "use client";
 
-import { ClipboardCheck, Users, Rocket, ShieldAlert, Database, Archive } from "lucide-react";
+import { 
+  Search, Gavel, Zap, Users2, Activity, ShieldCheck, FileText, ArrowRight 
+} from "lucide-react";
 import Reveal from "./Reveal";
 
 const coreServices = [
-  { 
-    title: "Site Management", 
-    desc: "Ethics committee communications, regulatory document submission, and rigorous oversight.", 
-    icon: <ClipboardCheck className="w-8 h-8 text-[var(--syncvision-teal)]" /> 
-  },
-  { 
-    title: "CRC Out-sourcing", 
-    desc: "Highly qualified team of Coordinators with medical, nursing, and life science backgrounds.", 
-    icon: <Users className="w-8 h-8 text-[var(--syncvision-teal)]" /> 
-  },
-  { 
-    title: "Study Start Up", 
-    desc: "Schedule management, site feasibility assessments, and laboratory coordination.", 
-    icon: <Rocket className="w-8 h-8 text-[var(--syncvision-teal)]" /> 
-  },
-  { 
-    title: "Safety & PV Support", 
-    desc: "AE/SAE reporting coordination and safety compliance tracking throughout the study.", 
-    icon: <ShieldAlert className="w-8 h-8 text-[var(--syncvision-teal)]" /> 
-  },
-  { 
-    title: "Data & Quality", 
-    desc: "CRF/eCRF support, query resolution, and audit-readiness maintenance.", 
-    icon: <Database className="w-8 h-8 text-[var(--syncvision-teal)]" /> 
-  },
-  { 
-    title: "Study Close-Out", 
-    desc: "Final reconciliation, document archival, and site close-out coordination.", 
-    icon: <Archive className="w-8 h-8 text-[var(--syncvision-teal)]" /> 
-  },
+  { title: "Site Feasibility & Selection", icon: <Search className="w-6 h-6" />, desc: "Site identification, investigator qualification, and infrastructure assessment." },
+  { title: "Regulatory & Ethics Support", icon: <Gavel className="w-6 h-6" />, desc: "Seamless EC submissions, regulatory document compilation, and ICF coordination." },
+  { title: "Study Start-Up & Activation", icon: <Zap className="w-6 h-6" />, desc: "Essential document management, SIV coordination, and investigator meetings." },
+  { title: "Patient Recruitment", icon: <Users2 className="w-6 h-6" />, desc: "Strategic recruitment planning, pre-screening, and retention tracking." },
+  { title: "Clinical Operations Support", icon: <Activity className="w-6 h-6" />, desc: "Source documentation, eCRF entries, and monitoring visit assistance." },
+  { title: "Safety & Compliance", icon: <ShieldCheck className="w-6 h-6" />, desc: "SAE reporting, safety log tracking, and audit-readiness support." },
+  { title: "Quality & Documentation", icon: <FileText className="w-6 h-6" />, desc: "TMF support, site file maintenance, and SOP-based data checks." },
 ];
 
 export function CoreServicesGrid() {
   return (
-    // Background updated to Brand Off-white (#F7F9FB)
-    <section className="py-12 md:py-12 bg-[#F7F9FB]">
+    <section className="py-24 lg:py-32 bg-[#F7F9FB] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        
+        <Reveal className="mb-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="max-w-2xl">
+              <h2 className="text-4xl md:text-5xl font-black text-[var(--syncvision-green)] tracking-tighter">
+                Our Service <span className="text-[var(--syncvision-teal)]">Spectrum</span>
+              </h2>
+              <p className="text-slate-500 mt-4 font-light text-lg">
+                Precision-engineered SMO solutions for the modern clinical trial landscape.
+              </p>
+            </div>
+            <div className="hidden md:block">
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--syncvision-gold)] bg-white px-4 py-2 rounded-full border border-slate-100 shadow-sm">
+                Excellence Delivered
+              </span>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* GRID STRATEGY: 
+            We use a 4-column grid on XL screens. 
+            To handle the 7-card 'missing slot' look, we center the last row.
+        */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-center">
           {coreServices.map((s, i) => (
-            <Reveal key={i}>
-              <div className="p-8 h-full bg-white border border-slate-100 rounded-[2rem] hover:border-[var(--syncvision-gold)]/30 hover:shadow-2xl hover:shadow-[0_4px_20px_rgb(var(--syncvision-green)_/_0.05)] transition-all duration-500 group">
+            <Reveal 
+              key={i} 
+              delay={i * 50} 
+              className={`h-full ${i >= 4 ? "xl:translate-x-1/2" : ""}`} // Centers the 3 cards in the bottom row on 4-col layout
+            >
+              <div className="group relative h-full min-h-[320px] bg-white border border-slate-100 rounded-[2.5rem] p-8 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-[1.05] hover:z-20 hover:shadow-[0_40px_80px_-20px_rgba(10,77,68,0.15)] hover:border-[var(--syncvision-gold)]/50 flex flex-col">
                 
-                {/* Icon Container: Transitioning to SyncVision Green on hover */}
-                <div className="mb-6 w-14 h-14 bg-[#F7F9FB] rounded-2xl flex items-center justify-center group-hover:bg-[var(--syncvision-green)] transition-colors duration-300">
-                  <div className="group-hover:scale-110 group-hover:[&_svg]:text-[var(--syncvision-gold)] transition-all">
-                    {s.icon}
-                  </div>
+                {/* Icon Circle */}
+                <div className="w-14 h-14 bg-[#F7F9FB] text-[var(--syncvision-teal)] rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[var(--syncvision-green)] group-hover:text-[var(--syncvision-gold)] transition-all duration-500 shadow-sm">
+                  {s.icon}
                 </div>
-                
-                {/* Title using SyncVision Green */}
-                <h3 className="text-xl font-extrabold text-[var(--syncvision-green)] mb-3 tracking-tight">
+
+                {/* Content */}
+                <h3 className="text-lg font-bold text-[var(--syncvision-green)] mb-4 leading-tight group-hover:text-[var(--syncvision-green)] transition-colors">
                   {s.title}
                 </h3>
                 
-                <p className="text-slate-600 text-sm md:text-base leading-relaxed font-light">
+                <p className="text-slate-500 text-sm leading-relaxed font-light group-hover:text-slate-700 transition-colors">
                   {s.desc}
                 </p>
+
+                {/* Hover-only footer detail */}
+                <div className="mt-auto pt-6 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[var(--syncvision-gold)]">
+                    Explore Details
+                  </span>
+                  <ArrowRight className="w-4 h-4 text-[var(--syncvision-gold)]" />
+                </div>
+
+                {/* Background Brand Glow on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-[var(--syncvision-gold)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               </div>
             </Reveal>
           ))}

@@ -4,8 +4,11 @@ import Reveal from "./Reveal";
 
 export default function AboutHero() {
   return (
-    // Updated background to SyncVision Green
-    <section className="relative min-h-[90vh] lg:min-h-[85vh] flex items-center overflow-hidden bg-[var(--syncvision-green)]">
+    /* FIXED VIEWPORT & ALIGNMENT:
+       - min-h-[100svh] handles short landscape screens (Nest Hub) accurately.
+       - flex-col for mobile/tablet to avoid vertical centering overlap.
+    */
+    <section className="relative min-h-[100svh] lg:min-h-[85vh] flex flex-col lg:flex-row lg:items-center overflow-hidden bg-[var(--syncvision-green)]">
       
       {/* Background Image */}
       <div
@@ -19,32 +22,43 @@ export default function AboutHero() {
       <div className="absolute inset-0 bg-[var(--syncvision-background-teal)]/60" />
       <div className="absolute inset-0 bg-gradient-to-r from-[var(--syncvision-background-teal)] via-[rgb(var(--syncvision-teal-rgb)_/_0.8)] to-transparent lg:via-[rgb(var(--syncvision-teal-rgb)_/_0.6)]" />
 
-      {/* Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 py-12 lg:pt-0">
+      {/* FIXED PADDING FOR MID-DEVICES:
+          - pt-28: Clears Navbar on Nest Hub.
+          - md:pt-36: Clears Navbar on Nest Hub Max/Tablets.
+          - lg:pt-12: Standard desktop spacing.
+      */}
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 pt-28 pb-20 md:pt-36 lg:pt-12 lg:pb-0">
         <div className="max-w-3xl">
           <Reveal>
-            {/* Title: SyncVision Gold for the brand highlight */}
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-[1.2] text-white tracking-tight">
-              About Sync<span className="">Vision</span>
+            {/* Title: Decreased md:text size to 5xl for Nest Hub height fit */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.1] text-white tracking-tight">
+              About Sync<span className="text-[var(--syncvision-gold)]">Vision</span>
             </h1>
 
-            {/* Tagline: Signature left border using Gold for high visibility */}
-            <h2 className="mt-4 sm:mt-6 text-lg sm:text-xl md:text-2xl font-medium text-[#F7F9FB] leading-snug border-l-4 border-[var(--syncvision-gold)] pl-4">
-              Specialized Site Management <br className="hidden sm:block" />
-              <span className="text-white italic">Operational Excellence</span>
+            {/* Tagline: Integrated "Where Vision Meets Integrity" */}
+            <h2 className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-[#F7F9FB] leading-snug border-l-4 border-[var(--syncvision-gold)] pl-4 italic">
+              “Where Vision Meets Integrity”
             </h2>
 
-            {/* Description */}
+            {/* Description: Integrated Pune, Thane, Patna presence */}
             <p className="mt-6 text-sm sm:text-base md:text-lg text-[#F7F9FB]/80 leading-relaxed max-w-2xl font-light">
-              A specialized Site Management Organization dedicated to elevating 
-              the standards of clinical research through transparency, 
-              compliance, and reliability across India.
+              Headquartered in Pune with a strong operational presence in Thane and Patna, 
+              we are a quality-focused Site Management Organization (SMO) committed to 
+              delivering ethical and efficient clinical trial solutions across India.
             </p>
+            
+            {/* Vision Highlight */}
+            <div className="mt-8 flex items-center gap-4">
+               <div className="h-[1px] w-12 bg-[var(--syncvision-gold)]/50" />
+               <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[var(--syncvision-gold)] font-bold">
+                 Established in Pune • MMR • Patna
+               </span>
+            </div>
           </Reveal>
         </div>
       </div>
 
-      {/* Standardized bottom decorative fade: Fading to SyncVision Green */}
+      {/* Standardized bottom decorative fade */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--syncvision-green)] to-transparent" />
     </section>
   );

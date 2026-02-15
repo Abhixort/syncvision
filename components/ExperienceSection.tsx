@@ -6,77 +6,85 @@ import { GraduationCap, Briefcase, Workflow } from "lucide-react";
 
 export default function ExperienceSection() {
   return (
-    // Background updated to Off-white (#F7F9FB)
-    <section className="bg-[#F7F9FB] py-24">
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+    // Responsive padding: pt-32 on mobile/mid-devices to clear fixed Navbar on short screens
+    <section className="bg-[#F7F9FB] pt-32 pb-20 md:pt-40 lg:py-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-        {/* LEFT: Text Content */}
-        <Reveal>
-          {/* Badge using SyncVision Teal for a professional signal of Expertise */}
+        {/* LEFT: Text Content - Left Aligned Reference */}
+        <Reveal className="order-2 lg:order-1 max-w-3xl">
           <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-syncvision-teal/10 border border-syncvision-teal/20">
-            <span className="text-[var(--syncvision-green)] text-xs font-bold uppercase tracking-[0.2em]">Our Expertise</span>
+            <span className="text-[var(--syncvision-green)] text-[10px] font-bold uppercase tracking-[0.2em]">Our Expertise</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[var(--syncvision-green)] leading-tight mb-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[var(--syncvision-green)] leading-tight mb-8 tracking-tight">
             Experienced Team, <br />
-            <span className="text-[var(--syncvision-green)]">Efficient Processes</span>
+            <span className="text-[var(--syncvision-green)] underline decoration-[var(--syncvision-gold)] decoration-4 underline-offset-8">Efficient Processes</span>
           </h2>
 
-          <div className="space-y-10">
+          <div className="space-y-8 mt-10">
             {/* Feature 1: Proprietary SOPs */}
             <div className="flex gap-5 group">
-              <div className="flex-shrink-0 w-14 h-14 bg-white rounded-2xl flex items-center justify-center border ABCDE shadow-sm group-hover:border-[var(--syncvision-gold)]/30 transition-colors">
-                <Workflow className="text-[var(--syncvision-teal)] w-7 h-7 group-hover:text-[var(--syncvision-gold)] transition-colors" />
+              <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-white rounded-2xl flex items-center justify-center border border-slate-100 shadow-sm group-hover:border-[var(--syncvision-gold)]/50 transition-all">
+                <Workflow className="text-[var(--syncvision-teal)] w-6 h-6 md:w-7 md:h-7 group-hover:text-[var(--syncvision-gold)] transition-colors" />
               </div>
-              <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-                <span className="text-[var(--syncvision-green)] font-bold">SyncVision Research Solution LLP</span> operates with its own proprietary SITE SOPs. Our leadership team brings years of global pharmaceutical experience in overseeing complex clinical operations and site management.
-              </p>
+              <div className="flex-1">
+                <h4 className="text-[var(--syncvision-green)] font-bold text-sm uppercase tracking-wider mb-1">Standardized SOPs</h4>
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base font-light">
+                  <span className="text-[var(--syncvision-green)] font-semibold">SyncVision</span> operates with proprietary SITE SOPs, overseen by a leadership team with global pharma experience in complex clinical operations.
+                </p>
+              </div>
             </div>
 
             {/* Feature 2: Qualified CRC Team */}
             <div className="flex gap-5 group">
-              <div className="flex-shrink-0 w-14 h-14 bg-white rounded-2xl flex items-center justify-center border ABCDE shadow-sm group-hover:border-[var(--syncvision-gold)]/30 transition-colors">
-                <GraduationCap className="text-[var(--syncvision-teal)] w-7 h-7 group-hover:text-[var(--syncvision-gold)] transition-colors" />
+              <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-white rounded-2xl flex items-center justify-center border border-slate-100 shadow-sm group-hover:border-[var(--syncvision-gold)]/50 transition-all">
+                <GraduationCap className="text-[var(--syncvision-teal)] w-6 h-6 md:w-7 md:h-7 group-hover:text-[var(--syncvision-gold)] transition-colors" />
               </div>
-              <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-                Our CRC team consists of highly qualified professionals holding degrees in <span className="text-[var(--syncvision-green)] font-semibold">Nursing, Medicine, and Life Sciences</span>. Most members bring direct hospital workflow experience, ensuring seamless integration with investigative sites.
-              </p>
+              <div className="flex-1">
+                <h4 className="text-[var(--syncvision-green)] font-bold text-sm uppercase tracking-wider mb-1">Qualified CRC Team</h4>
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base font-light">
+                  Our team holds degrees in <span className="text-[var(--syncvision-green)] font-semibold">Nursing, Medicine, and Life Sciences</span>, bringing direct hospital workflow experience for seamless site integration.
+                </p>
+              </div>
             </div>
 
             {/* Feature 3: Project Specific Plans */}
             <div className="flex gap-5 group">
-              <div className="flex-shrink-0 w-14 h-14 bg-white rounded-2xl flex items-center justify-center border ABCDE shadow-sm group-hover:border-[var(--syncvision-gold)]/30 transition-colors">
-                <Briefcase className="text-[var(--syncvision-teal)] w-7 h-7 group-hover:text-[var(--syncvision-gold)] transition-colors" />
+              <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-white rounded-2xl flex items-center justify-center border border-slate-100 shadow-sm group-hover:border-[var(--syncvision-gold)]/50 transition-all">
+                <Briefcase className="text-[var(--syncvision-teal)] w-6 h-6 md:w-7 md:h-7 group-hover:text-[var(--syncvision-gold)] transition-colors" />
               </div>
-              <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-                We develop project-specific plans including <span className="text-[var(--syncvision-green)] font-semibold">Risk Management and Quality Control</span>. This structured foundation allows us to deliver high-quality, inspection-ready services to our Sponsors and CROs.
-              </p>
+              <div className="flex-1">
+                <h4 className="text-[var(--syncvision-green)] font-bold text-sm uppercase tracking-wider mb-1">Quality Control</h4>
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base font-light">
+                  We develop project-specific <span className="text-[var(--syncvision-green)] font-semibold">Risk Management</span> plans to deliver high-quality, inspection-ready services to our Sponsors and CROs.
+                </p>
+              </div>
             </div>
           </div>
         </Reveal>
 
-        {/* RIGHT: Image Section */}
-        <Reveal className="relative mt-12 lg:mt-0">
+        {/* RIGHT: Image Section - Fixed for Nest Hub & Spacing */}
+        <Reveal className="order-1 lg:order-2 relative w-full">
           <div className="relative mx-auto w-full max-w-[500px]">
-            {/* Decorative aura using Teal */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-syncvision-teal/10 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse" />
+            {/* Standardized Brand Aura */}
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-syncvision-teal/10 rounded-full blur-2xl animate-pulse" />
             
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white aspect-square bg-slate-50">
+            {/* Square Aspect Ratio Frame */}
+            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-square bg-slate-100 group">
               <Image
                 src="/assets/experience.avif"
-                alt="SyncVision Professional Team"
+                alt="SyncVision Professional CRC Team"
                 fill
                 className="object-cover transform hover:scale-105 transition-transform duration-700"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--syncvision-green)]/20 to-transparent" />
             </div>
 
-            {/* Methodology Tag - Using SyncVision Green & Gold */}
-            <div className="absolute -bottom-6 -right-6 bg-[var(--syncvision-green)] p-6 rounded-2xl shadow-xl border border-white/10 hidden md:block z-20">
-              <p className="text-[var(--syncvision-gold)] font-black text-sm tracking-[0.1em] uppercase mb-1">Methodology</p>
-              <p className="text-white text-lg font-medium">Data-Driven Excellence</p>
+            {/* Methodology Badge - Standardized Gold/Green Focus */}
+            <div className="absolute -bottom-6 -right-4 lg:-right-6 bg-[var(--syncvision-green)] p-5 md:p-6 rounded-2xl shadow-xl border border-white/10 hidden sm:block z-20">
+              <p className="text-[var(--syncvision-gold)] font-black text-[10px] tracking-[0.2em] uppercase mb-1">Methodology</p>
+              <p className="text-white text-base md:text-lg font-medium">Data-Driven Excellence</p>
             </div>
-            
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-syncvision-teal/5 rounded-full blur-3xl -z-10" />
           </div>
         </Reveal>
 

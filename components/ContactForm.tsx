@@ -3,14 +3,13 @@
 import React, { useState } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
 
-interface Web3FormsResponse {
-  success: boolean;
-  message: string;
-}
-
 export default function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [submitted, setSubmitted] = useState<boolean>(false);
+  const btnBase = "cursor-pointer w-full inline-flex justify-center items-center rounded-full px-8 py-3 md:py-4 text-sm font-bold transition-all duration-300 shadow-lg border-2 border-[var(--syncvision-gold)]";
+
+  // Main Form Action Style
+  const btnPrimary = `${btnBase} bg-[var(--syncvision-gold)] text-[var(--syncvision-green)] hover:bg-transparent hover:text-[var(--syncvision-green)]`;
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -21,28 +20,20 @@ export default function ContactForm() {
     const formData = new FormData(event.currentTarget);
     formData.append("access_key", "63d3068e-a5a9-48bd-95ed-8d60702f15c8");
 
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
-
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: json,
+        body: formData,
       });
 
-      const result: Web3FormsResponse = await response.json();
-
+      const result = await response.json();
       if (result.success) {
         setSubmitted(true);
       } else {
-        setError("Something went wrong. Please try again.");
+        setError("Error. Please try again.");
       }
     } catch (err) {
-      setError("Failed to connect to the server.");
+      setError("Server connection failed.");
     } finally {
       setIsSubmitting(false);
     }
@@ -51,116 +42,77 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="flex flex-col items-center justify-center py-12 text-center animate-in fade-in zoom-in duration-500">
-        <div className="w-20 h-20 bg-[var(--syncvision-gold)]/20 rounded-full flex items-center justify-center mb-6">
-          <CheckCircle2 className="w-10 h-10 text-[var(--syncvision-gold)]" />
+        <div className="w-20 h-20 bg-[var(--syncvision-green)] text-[var(--syncvision-gold)] rounded-full flex items-center justify-center mb-6 shadow-xl">
+          <CheckCircle2 className="w-10 h-10" />
         </div>
-        <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
-        <p className="text-slate-400 max-w-[250px]">
-          Thank you for reaching out. SyncVision will get back to you shortly.
-        </p>
-        <button
-          onClick={() => setSubmitted(false)}
-          className="cursor-pointer mt-8 text-sm font-bold text-[var(--syncvision-gold)] hover:underline uppercase tracking-widest"
-        >
-          Send another message
+        <h3 className="text-2xl font-black text-[var(--syncvision-green)] mb-2">Message Sent!</h3>
+        <p className="text-slate-500 text-sm max-w-xs">Our clinical team has received your inquiry and will respond within 24 hours.</p>
+        <button onClick={() => setSubmitted(false)} className="mt-8 text-xs font-black text-[var(--syncvision-gold)] bg-[var(--syncvision-green)] px-6 py-2 rounded-full uppercase tracking-widest hover:scale-105 transition-all">
+          New Message
         </button>
       </div>
     );
   }
 
+  // Input styles for white background
+  const inputBase = "w-full px-4 py-3 bg-[#F7F9FB] border border-slate-200 text-[var(--syncvision-green)] rounded-xl outline-none focus:border-[var(--syncvision-teal)] focus:bg-white transition-all placeholder:text-slate-400 text-sm font-medium";
+  const labelBase = "text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 ml-1";
+
   return (
     <form onSubmit={handleSubmit} className="space-y-5 w-full">
-      <div className="grid md:grid-cols-2 gap-5">
-        <div>
-          <label className="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 ml-1">
-            Full Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            placeholder="John Doe"
-            required
-            className="w-full px-5 py-4 bg-white/5 border border-white/10 text-white rounded-xl outline-none transition-all focus:border-syncvision-teal placeholder:text-slate-400 placeholder:opacity-100"
-          />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="space-y-2">
+          <label className={labelBase}>Full Name</label>
+          <input type="text" name="name" required className={inputBase} placeholder="e.g. Dr. John Doe" />
         </div>
-
-        <div>
-          <label className="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 ml-1">
-            Email Address
-          </label>
-          <input
-            type="email"
-            name="email"
-            placeholder="john@company.com"
-            required
-            className="w-full px-5 py-4 bg-white/5 border border-white/10 text-white rounded-xl outline-none transition-all focus:border-syncvision-teal placeholder:text-slate-400 placeholder:opacity-100"
-          />
+        <div className="space-y-2">
+          <label className={labelBase}>Work Email</label>
+          <input type="email" name="email" required className={inputBase} placeholder="john@company.com" />
         </div>
       </div>
 
-      <div>
-        <label className="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 ml-1">
-          Subject
-        </label>
+      <div className="space-y-2">
+        <label className={labelBase}>Inquiry Type</label>
         <div className="relative">
-          <select
-            name="subject"
-            className="w-full px-5 py-4 bg-white/5 border border-white/10 text-white rounded-xl outline-none transition-all focus:border-syncvision-teal appearance-none cursor-pointer"
-          >
-            <option value="General Inquiry" className="bg-[var(--syncvision-green)]">
-              General Inquiry
-            </option>
-            <option value="Site Feasibility" className="bg-[var(--syncvision-green)]">
-              Site Feasibility
-            </option>
-            <option value="Sponsor Collaboration" className="bg-[var(--syncvision-green)]">
-              Sponsor Collaboration
-            </option>
-            <option value="Career Opportunity" className="bg-[var(--syncvision-green)]">
-              Career Opportunity
-            </option>
+          <select name="subject" className={`${inputBase} appearance-none cursor-pointer`}>
+            <option value="General">General Inquiry</option>
+            <option value="Feasibility">Site Feasibility</option>
+            <option value="Partnership">Sponsor/CRO Partnership</option>
+            <option value="Career">Career Application</option>
           </select>
-          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
-            <svg
-              className="h-4 w-4 fill-current"
-              viewBox="0 0 20 20"
-            >
-              <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-            </svg>
+          <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+            ▼
           </div>
         </div>
       </div>
 
-      <div>
-        <label className="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 ml-1">
-          Message
-        </label>
-        <textarea
-          name="message"
-          placeholder="How can we help your study?"
-          rows={5}
-          required
-          className="w-full px-5 py-4 bg-white/5 border border-white/10 text-white rounded-xl outline-none transition-all focus:border-syncvision-teal placeholder:text-slate-400 placeholder:opacity-100 resize-none"
-        />
+      <div className="space-y-2">
+        <label className={labelBase}>Message</label>
+        <textarea name="message" rows={4} required className={`${inputBase} resize-none`} placeholder="How can SyncVision support your research goals?"></textarea>
       </div>
 
-      {error && <p className="text-red-400 text-sm ml-1">{error}</p>}
-
+      <div className="pt-2">
       <button
         type="submit"
         disabled={isSubmitting}
-        className="cursor-pointer w-full bg-[var(--syncvision-gold)] text-[var(--syncvision-green)] py-4 rounded-xl font-bold flex items-center justify-center gap-3 border-1 border-[var(--syncvision-gold)]
-            transition-all transform hover:bg-white/5 hover:text-white  hover:backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed"
+        className={btnPrimary}
       >
         {isSubmitting ? (
-          <div className="w-6 h-6 border-2 border-[var(--syncvision-green)]/30 border-t-[var(--syncvision-green)] rounded-full animate-spin" />
+          <div className="w-5 h-5 border-2 border-[var(--syncvision-green)]/30 border-t-[var(--syncvision-green)] rounded-full animate-spin" />
         ) : (
-          <>
-            <Send className="w-5 h-5" />
-            <span>Send Message</span>
-          </>
+          <div className="flex items-center gap-3">
+            <Send className="w-4 h-4" /> 
+            <span className="uppercase tracking-widest text-[11px] md:text-xs">Send Message</span>
+          </div>
         )}
       </button>
+    </div>
+
+    {error && (
+      <p className="text-red-500 font-bold text-[10px] text-center mt-2 animate-pulse">
+        {error}
+      </p>
+    )}
     </form>
   );
 }

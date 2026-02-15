@@ -10,11 +10,13 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
+  // UPDATED: Added "Partner With Us" to the navigation links
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About us", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Therapeutic Areas", href: "/therapeutic-areas" },
+    { name: "Partner With Us", href: "/partner" }, // Added
     { name: "Careers", href: "/careers" },
     { name: "Contact Us", href: "/contact" },
   ];
@@ -30,7 +32,7 @@ export default function Navbar() {
   }, [open]);
 
   const navLinkClass = (href: string) =>
-    `relative pb-1 transition-colors duration-300 font-semibold tracking-tight
+    `relative pb-1 transition-colors duration-300 font-bold tracking-tight text-[13px] xl:text-[14px] uppercase
      after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-[var(--syncvision-gold)]
      after:origin-left after:scale-x-0 after:transition-transform after:duration-300
      hover:after:scale-x-100
@@ -44,14 +46,13 @@ export default function Navbar() {
             ? "bg-[var(--syncvision-green)]/95 backdrop-blur-md py-2 shadow-xl border-b border-white/10" 
             : "bg-transparent py-4 border-b border-transparent"}`}
       >
-        <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <nav className="max-w-[90rem] mx-auto px-6 flex items-center justify-between">
           
           <Link href="/" className="relative flex items-center group -ml-2">
-            {/* UPDATED: Desktop sizes (md:) slightly decreased; Mobile sizes maintained */}
             <div className={`relative transition-all duration-500 ${
               scrolled 
-                ? "w-40 h-10 md:w-56 md:h-14" // Scrolled: Mobile stays w-40, Desktop now w-56
-                : "w-48 h-12 md:w-80 md:h-20" // Top: Mobile stays w-48, Desktop now w-80
+                ? "w-40 h-10 md:w-48 md:h-12" 
+                : "w-48 h-12 md:w-64 md:h-16" 
             }`}>
               <Image 
                 src="/assets/SyncVisionLogo6.png" 
@@ -65,7 +66,8 @@ export default function Navbar() {
             </div>
           </Link>
 
-          <ul className="hidden lg:flex items-center gap-8 text-sm xl:text-base font-medium">
+          {/* UPDATED: Slightly tighter gap (gap-6) to accommodate the extra nav item */}
+          <ul className="hidden lg:flex items-center gap-6 xl:gap-8 font-medium">
             {navLinks.map((link) => (
               <li key={link.href} className="flex items-center">
                 <Link href={link.href} className={navLinkClass(link.href)}>
@@ -107,7 +109,7 @@ export default function Navbar() {
                 key={link.href} 
                 onClick={() => setOpen(false)} 
                 href={link.href} 
-                className={`transition-all border-l-2 pl-4 py-1.5 ${
+                className={`transition-all border-l-2 pl-4 py-1.5 uppercase text-sm tracking-widest ${
                   pathname === link.href 
                   ? "text-[var(--syncvision-gold)] border-[var(--syncvision-gold)] bg-[var(--syncvision-gold)]/5" 
                   : "text-white/90 border-transparent active:bg-white/5"

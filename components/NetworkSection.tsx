@@ -6,76 +6,98 @@ import { MapPin, TrendingUp, DollarSign } from "lucide-react";
 
 export default function NetworkSection() {
   return (
-    // Updated to Brand Background: Off-white (#F7F9FB)
-    <section className="bg-[#F7F9FB] py-12 text-[var(--syncvision-green)] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+    // Fixed Padding: pt-32/md:pt-40 to ensure headers clear the fixed Navbar on Nest Hub/Tablets
+    <section className="bg-[#F7F9FB] pt-32 pb-20 md:pt-40 lg:py-24 relative overflow-hidden">
+      
+      {/* Decorative Brand Shape - Aligned to Left */}
+      <div className="absolute top-0 left-0 w-1/3 h-full bg-syncvision-teal/5 -skew-x-12 transform origin-top -translate-x-20 -z-10" />
 
-        {/* LEFT: Map/Diagram Placeholder */}
-        <Reveal className="relative mt-12 lg:mt-0">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        {/* LEFT: Map/Diagram - Image on LEFT to maintain Zigzag flow */}
+        <Reveal className="order-1 relative w-full">
           <div className="relative mx-auto w-full max-w-[500px]">
-            {/* Decorative Aura using Teal (#125E54) */}
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-syncvision-teal/10 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" />
+            {/* Standardized Teal Aura */}
+            <div className="absolute -top-6 -left-6 w-32 h-32 bg-syncvision-teal/10 rounded-full blur-2xl animate-pulse" />
             
-            {/* Container: Aspect-square White Card */}
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white aspect-square bg-white flex items-center justify-center p-6 sm:p-8">
-              <div className="relative w-full h-full">
+            {/* Main Container: Standardized border and shadow */}
+            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-square bg-white flex items-center justify-center p-6 sm:p-10 group">
+              <div className="relative w-full h-full transition-transform duration-700 group-hover:scale-105">
                 <Image
                   src="/assets/team-distribution.png"
-                  alt="Site Team Distribution India"
+                  alt="SyncVision Regional Presence"
                   fill
                   className="object-contain" 
-                  priority={false}
                 />
+              </div>
+              
+              {/* Presence Badge */}
+              <div className="absolute top-6 left-6 z-20 bg-[var(--syncvision-green)]/90 backdrop-blur-md text-white px-4 py-2 rounded-xl border border-white/20 shadow-lg">
+                <p className="text-[var(--syncvision-gold)] font-black text-[10px] uppercase tracking-widest">Pan-India</p>
               </div>
             </div>
 
-            {/* Brand Accent - Teal Blur */}
-            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-syncvision-teal/10 rounded-full blur-3xl -z-10" />
-
-            {/* Consistency Badge - Updated to SyncVision Green and Gold */}
-            <div className="absolute bottom-6 -right-6 bg-[var(--syncvision-green)] px-5 py-3 rounded-xl shadow-xl hidden md:block border border-white/10 z-20">
-              <p className="text-[var(--syncvision-gold)] font-black uppercase tracking-tighter">Pan-India</p>
-              <p className="text-white text-[10px] uppercase font-bold tracking-widest">Site Presence</p>
+            {/* Bottom Tag */}
+            <div className="absolute -bottom-6 -right-4 lg:-right-6 bg-white px-6 py-4 rounded-2xl shadow-xl border border-slate-100 hidden sm:block z-20">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-[var(--syncvision-gold)] animate-ping" />
+                <p className="text-[var(--syncvision-green)] font-bold text-sm tracking-tight">Active Site Operations</p>
+              </div>
             </div>
           </div>
         </Reveal>
 
-        {/* RIGHT: Text content */}
-        <Reveal>
-          {/* Heading using Green and Gold */}
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight text-[var(--syncvision-green)]">
-            Strategic <span className="text-[var(--syncvision-green)]">Network</span> & <br /> Geographic Reach
-          </h2>
-
-          <p className="text-slate-600 text-lg leading-relaxed mb-10">
-            Our CRC services are strategically distributed across major clinical research hubs in <span className="text-[var(--syncvision-green)] font-semibold italic text-base">Maharashtra, Delhi, Bihar and across India</span>. We collaborate with qualified Principal Investigators and hospitals to ensure timely study start-up.
-          </p>
-
-          <div className="grid gap-6">
-            {/* Cards using Green/Teal Accents */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-syncvision-teal/30 transition-all duration-300 group">
-               <div className="flex items-center gap-4 mb-2">
-                  <TrendingUp className="text-[var(--syncvision-teal)] w-5 h-5 group-hover:scale-110 group-hover:text-[var(--syncvision-gold)] transition-all" />
-                  <h4 className="font-bold text-[var(--syncvision-green)]">Rapid Expansion</h4>
-               </div>
-               <p className="text-sm text-slate-500 leading-relaxed">As business needs evolve, our service distribution continues to expand rapidly across multiple regions.</p>
+        {/* RIGHT: Text Content */}
+        <Reveal className="order-2 max-w-3xl">
+          <div className="space-y-6">
+            <div className="flex items-center gap-2 text-[var(--syncvision-teal)] font-bold text-[10px] sm:text-xs uppercase tracking-[0.2em]">
+              <MapPin className="w-4 h-4 text-[var(--syncvision-gold)]" />
+              Geographic Reach
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-syncvision-teal/30 transition-all duration-300 group">
-               <div className="flex items-center gap-4 mb-2">
-                  <DollarSign className="text-[var(--syncvision-teal)] w-5 h-5 group-hover:scale-110 group-hover:text-[var(--syncvision-gold)] transition-all" />
-                  <h4 className="font-bold text-[var(--syncvision-green)]">Cost & Time Efficiency</h4>
-               </div>
-               <p className="text-sm text-slate-500 leading-relaxed">Wide geographic allocation reduces travel logistics and operating costs, directly improving project timelines.</p>
-            </div>
-          </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[var(--syncvision-green)] leading-[1.15] tracking-tight">
+              Strategic <span className="text-[var(--syncvision-green)]">Network</span> & <br /> 
+              <span className="text-[var(--syncvision-green)] underline decoration-[var(--syncvision-gold)] decoration-4 underline-offset-8">Multi-City Presence</span>
+            </h2>
 
-          {/* Action Footer using Teal and Gold Pulse */}
-          <div className="mt-10 flex items-center gap-4 text-[var(--syncvision-teal)] font-bold tracking-tight">
-            <div className="p-2 bg-syncvision-teal/10 rounded-full">
-                <MapPin className="animate-pulse w-5 h-5 text-[var(--syncvision-gold)]" />
+            <p className="text-slate-600 leading-relaxed text-sm sm:text-base md:text-lg font-light pt-4">
+              Headquartered in <span className="text-[var(--syncvision-green)] font-semibold">Pune</span>, with operational strength in <span className="text-[var(--syncvision-green)] font-semibold">Thane (MMR) and Patna</span>. Our reach allows for faster site activation and better patient access across diverse therapeutic areas.
+            </p>
+
+            <div className="grid gap-4 mt-8">
+              {/* Feature Card 1 */}
+              <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 group">
+                 <div className="flex items-center gap-4 mb-2">
+                    <div className="p-2 bg-syncvision-teal/10 rounded-lg">
+                        <TrendingUp className="text-[var(--syncvision-teal)] w-5 h-5 group-hover:text-[var(--syncvision-gold)] transition-colors" />
+                    </div>
+                    <h4 className="font-bold text-[var(--syncvision-green)] text-sm uppercase tracking-wide">Rapid Site Activation</h4>
+                 </div>
+                 <p className="text-xs md:text-sm text-slate-500 leading-relaxed pl-11">
+                    Our strategic distribution across clinical hubs ensures timely study start-up and efficient regulatory coordination.
+                 </p>
+              </div>
+
+              {/* Feature Card 2 */}
+              <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 group">
+                 <div className="flex items-center gap-4 mb-2">
+                    <div className="p-2 bg-syncvision-teal/10 rounded-lg">
+                        <DollarSign className="text-[var(--syncvision-teal)] w-5 h-5 group-hover:text-[var(--syncvision-gold)] transition-colors" />
+                    </div>
+                    <h4 className="font-bold text-[var(--syncvision-green)] text-sm uppercase tracking-wide">Operational Efficiency</h4>
+                 </div>
+                 <p className="text-xs md:text-sm text-slate-500 leading-relaxed pl-11">
+                    Geographic allocation reduces travel logistics and operating costs, directly improving overall project timelines.
+                 </p>
+              </div>
             </div>
-            <span className="uppercase text-xs tracking-widest text-[var(--syncvision-green)]/80">Growing presence in Maharashtra, Delhi, Bihar & Pan-India</span>
+
+            {/* Signature Border Note matching HomeHero */}
+            <div className="mt-8 border-l-4 border-[var(--syncvision-gold)] pl-6 py-1">
+               <p className="text-slate-500 text-xs md:text-sm italic">
+                “Strategically positioned to support Sponsors, CROs, and Investigators across India.”
+               </p>
+            </div>
           </div>
         </Reveal>
 
