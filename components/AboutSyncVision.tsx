@@ -53,7 +53,7 @@ export default function AboutSyncVision() {
               {/* Container: Applied aspect-square and standardized border-4 */}
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-square bg-slate-100 group">
                 <Image 
-                  src="/assets/clinical-research.png" 
+                  src="/assets/newImage4.jpeg" 
                   alt="SyncVision Clinical Research Excellence" 
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"

@@ -69,7 +69,7 @@ export default function Footer() {
             <h4 className="text-base font-bold mb-8 text-[var(--syncvision-gold)] uppercase tracking-widest">Presence</h4>
             <ul className="space-y-4 text-white/80 text-sm font-light">
               <li className="flex items-center gap-3"><MapPin className="w-4 h-4 text-[var(--syncvision-gold)]" /> Pune (HQ)</li>
-              <li className="flex items-center gap-3"><MapPin className="w-4 h-4 text-[var(--syncvision-gold)]" /> Thane (MMR)</li>
+              <li className="flex items-center gap-3"><MapPin className="w-4 h-4 text-[var(--syncvision-gold)]" /> Thane</li>
               <li className="flex items-center gap-3"><MapPin className="w-4 h-4 text-[var(--syncvision-gold)]" /> Patna</li>
               <li className="pt-2 italic text-[var(--syncvision-gold)]/80 font-medium">Pan-India Support</li>
             </ul>

@@ -72,10 +72,10 @@ export default function ExperienceSection() {
             {/* Square Aspect Ratio Frame */}
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-square bg-slate-100 group">
               <Image
-                src="/assets/experience.avif"
+                src="/assets/newImage2.png"
                 alt="SyncVision Professional CRC Team"
                 fill
-                className="object-cover transform hover:scale-105 transition-transform duration-700"
+                className="object-cover transition duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--syncvision-green)]/20 to-transparent" />
             </div>
@@ -85,6 +85,8 @@ export default function ExperienceSection() {
               <p className="text-[var(--syncvision-gold)] font-black text-[10px] tracking-[0.2em] uppercase mb-1">Methodology</p>
               <p className="text-white text-base md:text-lg font-medium">Data-Driven Excellence</p>
             </div>
+            {/* Decorative outer frame */}
+            <div className="absolute -inset-4 border-2 border-syncvision-teal/5 rounded-[3rem] -z-10" />
           </div>
         </Reveal>
 

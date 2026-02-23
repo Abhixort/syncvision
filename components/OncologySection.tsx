@@ -23,7 +23,7 @@ export default function SiteManagementSection() {
             {/* Main Image Frame - Standardized border and aspect ratio */}
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-square bg-slate-100 group">
               <Image
-                src="/assets/oncology.avif"
+                src="/assets/newImage3.png"
                 alt="Clinical Site Management Operations"
                 fill
                 className="object-cover transition duration-700 group-hover:scale-105"

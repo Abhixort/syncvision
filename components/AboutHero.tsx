@@ -14,7 +14,7 @@ export default function AboutHero() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/assets/about-hero.jpg')",
+          backgroundImage: "url('/assets/newImage5.jpeg')",
         }}
       />
 
@@ -51,7 +51,7 @@ export default function AboutHero() {
             <div className="mt-8 flex items-center gap-4">
                <div className="h-[1px] w-12 bg-[var(--syncvision-gold)]/50" />
                <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[var(--syncvision-gold)] font-bold">
-                 Established in Pune • MMR • Patna
+                 Established in Pune • Thane • Patna
                </span>
             </div>
           </Reveal>

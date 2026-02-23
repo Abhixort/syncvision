@@ -39,7 +39,7 @@ export default function AboutSection() {
 
               <ul className="grid sm:grid-cols-1 gap-5">
                 {[
-                  { t: "Strategic Multi-City Presence", d: "Pune, Thane (MMR), and Patna for faster site activation." },
+                  { t: "Strategic Multi-City Presence", d: "Pune, Thane, and Patna for faster site activation." },
                   { t: "Regulatory & Ethics Expertise", d: "Seamless EC submissions and documentation management." },
                   { t: "Data Integrity & Quality", d: "SOP-driven processes aligned with ICH-GCP guidelines." },
                   { t: "Transparent Communication", d: "Proactive updates and solution-oriented problem solving." }
@@ -66,10 +66,10 @@ export default function AboutSection() {
               {/* Image Container with Nest Hub specific aspect ratio protection */}
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-[12px] border-white aspect-[4/5] lg:aspect-square bg-slate-200">
                 <Image
-                  src="/assets/clinical-research.png" 
+                  src="/assets/newImage1.png" 
                   alt="SyncVision Research Operations"
                   fill
-                  className="object-cover"
+                  className="object-cover transition duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--syncvision-green)]/40 to-transparent" />
               </div>
@@ -84,6 +84,7 @@ export default function AboutSection() {
                   Pune • Thane • Patna
                 </p>
               </div>
+              <div className="absolute -inset-4 border-2 border-syncvision-teal/5 rounded-[3rem] -z-10" />
             </div>
           </Reveal>
         </div>

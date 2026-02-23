@@ -46,14 +46,14 @@ export function ServicesHero() {
             </p>
 
             {/* Service Highlight Badge */}
-            <div className="mt-8 flex items-center gap-3">
+            {/* <div className="mt-8 flex items-center gap-3">
               <span className="px-3 py-1 bg-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest text-[var(--syncvision-gold)] border border-white/20">
                 End-to-End Support
               </span>
               <span className="px-3 py-1 bg-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest text-white border border-white/20">
                 ICH-GCP Aligned
               </span>
-            </div>
+            </div> */}
           </Reveal>
         </div>
       </div>

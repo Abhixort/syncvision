@@ -20,30 +20,31 @@ export default function NetworkSection() {
             {/* Standardized Teal Aura */}
             <div className="absolute -top-6 -left-6 w-32 h-32 bg-syncvision-teal/10 rounded-full blur-2xl animate-pulse" />
             
-            {/* Main Container: Standardized border and shadow */}
+            {/* Main Container: White background and padding ensures the image fits the box perfectly */}
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-square bg-white flex items-center justify-center p-6 sm:p-10 group">
-              <div className="relative w-full h-full transition-transform duration-700 group-hover:scale-105">
                 <Image
-                  src="/assets/team-distribution.png"
+                  src="/assets/clinical-research.png"
                   alt="SyncVision Regional Presence"
                   fill
-                  className="object-contain" 
+                  className="object-cover transition duration-700 group-hover:scale-105" // This keeps the map/diagram fully visible within the box
+                  priority
                 />
-              </div>
               
-              {/* Presence Badge */}
+              {/* Presence Badge: Positioned inside the white box */}
               <div className="absolute top-6 left-6 z-20 bg-[var(--syncvision-green)]/90 backdrop-blur-md text-white px-4 py-2 rounded-xl border border-white/20 shadow-lg">
                 <p className="text-[var(--syncvision-gold)] font-black text-[10px] uppercase tracking-widest">Pan-India</p>
               </div>
             </div>
 
-            {/* Bottom Tag */}
+            {/* Bottom Tag: Floating outside the box for depth */}
             <div className="absolute -bottom-6 -right-4 lg:-right-6 bg-white px-6 py-4 rounded-2xl shadow-xl border border-slate-100 hidden sm:block z-20">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-[var(--syncvision-gold)] animate-ping" />
                 <p className="text-[var(--syncvision-green)] font-bold text-sm tracking-tight">Active Site Operations</p>
               </div>
             </div>
+            {/* Decorative outer frame */}
+            <div className="absolute -inset-4 border-2 border-syncvision-teal/5 rounded-[3rem] -z-10" />
           </div>
         </Reveal>
 
@@ -61,7 +62,7 @@ export default function NetworkSection() {
             </h2>
 
             <p className="text-slate-600 leading-relaxed text-sm sm:text-base md:text-lg font-light pt-4">
-              Headquartered in <span className="text-[var(--syncvision-green)] font-semibold">Pune</span>, with operational strength in <span className="text-[var(--syncvision-green)] font-semibold">Thane (MMR) and Patna</span>. Our reach allows for faster site activation and better patient access across diverse therapeutic areas.
+              Headquartered in <span className="text-[var(--syncvision-green)] font-semibold">Pune</span>, with operational strength in <span className="text-[var(--syncvision-green)] font-semibold">Thane and Patna</span>. Our reach allows for faster site activation and better patient access across diverse therapeutic areas.
             </p>
 
             <div className="grid gap-4 mt-8">
