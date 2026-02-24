@@ -7,7 +7,7 @@ export default function ContactForm() {
   const btnBase = "cursor-pointer w-full inline-flex justify-center items-center rounded-full px-8 py-3 md:py-4 text-sm font-bold transition-all duration-300 shadow-lg border-2 border-[var(--syncvision-gold)]";
 
   // Main Form Action Style
-  const btnPrimary = `${btnBase} bg-[var(--syncvision-gold)] text-[var(--syncvision-green)] hover:bg-transparent hover:text-[var(--syncvision-green)]`;
+  const btnPrimary = `${btnBase} bg-[var(--syncvision-gold)] text-[var(--syncvision-green)] hover:bg-[var(--syncvision-teal)] hover:text-white`;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);

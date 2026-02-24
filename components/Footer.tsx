@@ -16,7 +16,9 @@ export default function Footer() {
           
           {/* Column 1: Brand Card - Left Aligned on Mobile per HomeHero Reference */}
           <div className="flex flex-col items-start">
-            <div className="group bg-white rounded-3xl p-6 mb-8 border border-white/10 shadow-2xl transition-all duration-500 w-full max-w-[280px]">
+          <div className="group bg-white rounded-3xl p-6 mb-8 border border-white/10 
+            shadow-[0_12px_32px_rgba(16,185,129,0.25)]
+            transition-all duration-500 w-full max-w-[280px]">
               <Link href="/" className="relative block transition-transform duration-500 hover:scale-[1.02]">
                 <div className="relative w-full aspect-[3/1]">
                   <Image 
@@ -30,9 +32,9 @@ export default function Footer() {
               </Link>
             </div>
             
-            <p className="text-white/70 text-sm leading-relaxed mb-6 font-light max-w-xs">
+            {/* <p className="text-white/70 text-sm leading-relaxed mb-6 font-light max-w-xs">
               Delivering ethical, efficient, and quality-driven clinical trial site management solutions across India.
-            </p>
+            </p> */}
 
             <div className="flex gap-3">
               {[
@@ -87,7 +89,9 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-4 group">
                 <Phone className="w-5 h-5 text-[var(--syncvision-gold)] flex-shrink-0 mt-0.5" />
+                <a href="tel:+919711416627">
                 <span className="text-white/80">+91 9711416627</span>
+                </a>
               </li>
               <li className="mt-4 border-l-2 border-[var(--syncvision-gold)] pl-4 italic text-white/50 text-xs">
                 "Where Vision Meets Integrity"

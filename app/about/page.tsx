@@ -9,7 +9,7 @@ export default function Page() {
     <main>
       <Navbar />
       <AboutHero />
-      <AboutSyncVision />
+      {/* <AboutSyncVision /> */}
       <MissionVision />
       {/* Educational content can go below if needed, or stop here */}
       <Footer />

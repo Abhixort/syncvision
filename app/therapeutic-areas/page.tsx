@@ -10,7 +10,7 @@ import { ArrowRight, Search } from "lucide-react";
 export default function TherapeuticAreasPage() {
   // SHARED BUTTON LOGIC:
   // Primary: Solid Gold -> Outline Green
-  const btnPrimary = "cursor-pointer w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full px-10 py-4 text-sm font-bold transition-all duration-300 shadow-lg border-2 bg-[var(--syncvision-gold)] border-[var(--syncvision-gold)] text-[var(--syncvision-green)] hover:bg-transparent hover:text-[var(--syncvision-green)] hover:border-[var(--syncvision-green)] active:scale-95";
+  const btnPrimary = "cursor-pointer w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full px-10 py-4 text-sm font-bold transition-all duration-300 shadow-lg border-2 bg-[var(--syncvision-gold)] border-[var(--syncvision-gold)] text-[var(--syncvision-green)] hover:bg-[var(--syncvision-teal)] hover:text-white hover:border-[var(--syncvision-gold)] active:scale-95";
 
   // Secondary: Outline Green -> Solid Gold
   const btnSecondary = "cursor-pointer w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full px-10 py-4 text-sm font-bold transition-all duration-300 shadow-md border-2 bg-transparent border-[var(--syncvision-green)] text-[var(--syncvision-green)] hover:bg-[var(--syncvision-gold)] hover:text-[var(--syncvision-green)] hover:border-[var(--syncvision-gold)] active:scale-95";
@@ -49,7 +49,7 @@ export default function TherapeuticAreasPage() {
                 Inquire Feasibility
               </a>
               
-              <a href="/services" className={btnSecondary}>
+              <a href="/services" className={btnPrimary}>
                 View SMO Services
                 <ArrowRight className="w-4 h-4" />
               </a>

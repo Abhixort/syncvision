@@ -29,9 +29,9 @@ export function ApplicationCard() {
               bg-[var(--syncvision-gold)]
               text-[var(--syncvision-green)]
               font-bold
-              py-4 rounded-xl border border-[var(--syncvision-gold)]
-              transition-all duration-300 transform hover:scale-[1.02] active:scale-95 
-              hover:bg-white hover:border-white shadow-lg"
+              py-4 rounded-full border border-[var(--syncvision-gold)]
+              transition-all duration-300 transform  
+              hover:bg-[var(--syncvision-teal)] hover:text-white hover:border-[var(--syncvision-gold)] shadow-lg"
           >
             <Mail className="w-5 h-5" />
             Email your CV
@@ -40,7 +40,8 @@ export function ApplicationCard() {
           <div className="mt-10 pt-8 border-t border-white/10">
              <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mb-1">Official Recruitment Channel</p>
              <p className="text-xs font-medium text-[var(--syncvision-gold)] break-all">
-                {email}
+             <a 
+            href={`mailto:${email}`}>{email}</a>
              </p>
           </div>
         </div>

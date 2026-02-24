@@ -42,18 +42,28 @@ export function WhyPartner() {
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {benefits.map((item, i) => (
-            <Reveal key={i} delay={i * 100}>
-              <div className="bg-white p-8 rounded-[2rem] border border-slate-100 hover:border-[var(--syncvision-gold)]/30 transition-all group h-full shadow-sm">
-                <div className="w-12 h-12 bg-[#F7F9FB] text-[var(--syncvision-teal)] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[var(--syncvision-green)] group-hover:text-[var(--syncvision-gold)] transition-all">
-                  {item.icon}
-                </div>
-                <h3 className="text-lg font-bold text-[var(--syncvision-green)] mb-3">{item.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed font-light">{item.desc}</p>
-              </div>
-            </Reveal>
-          ))}
+  {benefits.map((item, i) => (
+    <Reveal key={i} delay={i * 100}>
+      <div className="bg-white p-8 rounded-[2rem] border border-slate-100 
+                  hover:border-[var(--syncvision-gold)]/30 
+                  shadow-sm 
+                  hover:shadow-xl 
+                  hover:shadow-[0_20px_40px_rgba(10,77,68,0.05)]
+                  transition-all duration-500 
+                  group h-full">
+        <div className="w-12 h-12 bg-[#F7F9FB] text-[var(--syncvision-teal)] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[var(--syncvision-green)] group-hover:text-[var(--syncvision-gold)] transition-all">
+          {item.icon}
         </div>
+        <h3 className="text-lg font-bold text-[var(--syncvision-green)] mb-3">
+          {item.title}
+        </h3>
+        <p className="text-slate-600 text-sm leading-relaxed font-light">
+          {item.desc}
+        </p>
+      </div>
+    </Reveal>
+  ))}
+</div>
       </div>
     </section>
   );

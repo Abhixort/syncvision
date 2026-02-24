@@ -12,6 +12,7 @@ interface ContactInfoCardProps {
   title: string;
   detail: string;
   subDetail?: string;
+  type:string;
 }
 
 export default function ContactPage() {
@@ -30,6 +31,7 @@ export default function ContactPage() {
                 title="Headquarters"
                 detail="Pune, Maharashtra"
                 subDetail="Operational Presence: Thane & Patna"
+                type="address"
               />
             </Reveal>
             <Reveal>
@@ -38,6 +40,7 @@ export default function ContactPage() {
                 title="Direct Call"
                 detail="+91 9711416627"
                 subDetail="Mon - Fri, 9am - 6pm"
+                type="phone"
               />
             </Reveal>
             <Reveal>
@@ -46,6 +49,7 @@ export default function ContactPage() {
                 title="Email Us"
                 detail="info@syncvisionresearch.com"
                 subDetail="Typical response: < 24 hrs"
+                type="email"
               />
             </Reveal>
           </div>
@@ -88,13 +92,19 @@ export default function ContactPage() {
   );
 }
 
-function ContactInfoCard({ icon, title, detail, subDetail }: ContactInfoCardProps) {
+function ContactInfoCard({ icon, title, detail, subDetail, type }: ContactInfoCardProps) {
   return (
     <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col items-center text-center group hover:border-[var(--syncvision-gold)]/30 hover:shadow-xl hover:shadow-[0_20px_40px_rgba(10,77,68,0.05)] transition-all duration-500 h-full">
       
       {/* Icon Container: Transitioning from Teal to Green */}
       <div className="w-14 h-14 bg-[#F7F9FB] text-[var(--syncvision-teal)] rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[var(--syncvision-green)] group-hover:text-[var(--syncvision-gold)] transition-all duration-300 shadow-sm">
-        {icon}
+        {type === 'email' ? (
+          <a href="mailto:info@syncvisionresearch.com">{icon}</a>
+        ) : type === 'phone' ? (
+          <a href="tel:+919711416627">{icon}</a>
+        ) : (
+          icon
+        )}
       </div>
       
       <h3 className="font-black text-[var(--syncvision-green)] mb-3 tracking-[0.2em] uppercase text-[10px]">
@@ -102,7 +112,15 @@ function ContactInfoCard({ icon, title, detail, subDetail }: ContactInfoCardProp
       </h3>
       
       <p className="text-[var(--syncvision-green)] text-base lg:text-lg leading-tight font-bold mb-2">
-        {detail}
+        {/* {detail} */}
+        {/* {type == 'email'? (<a href="mailto:info@syncvisionresearch.com">{detail}</a>): (detail)} */}
+        {type === 'email' ? (
+          <a href="mailto:info@syncvisionresearch.com">{detail}</a>
+        ) : type === 'phone' ? (
+          <a href="tel:+919711416627">{detail}</a>
+        ) : (
+          detail
+        )}
       </p>
 
       {subDetail && (

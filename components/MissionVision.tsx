@@ -29,10 +29,16 @@ export default function MissionVision() {
           
           {/* Mission Card: Integrated from "Our Mission" text */}
           <Reveal>
-            <div className="h-full bg-white p-8 lg:p-12 rounded-[2.5rem] shadow-sm border border-slate-100 hover:border-syncvision-teal/30 transition-all duration-500 group relative overflow-hidden">
+            <div className="h-full bg-white p-8 lg:p-12 rounded-[2.5rem] shadow-sm border h-full bg-white p-8 lg:p-12 rounded-[2.5rem] shadow-sm 
+            border border-slate-100 
+            hover:border-[var(--syncvision-gold)]/30 
+            hover:shadow-xl 
+            hover:shadow-[0_20px_40px_rgba(10,77,68,0.05)]
+            transition-all duration-500 
+            group relative overflow-hiddenborder-slate-100 hover:border-[var(--syncvision-gold)]/30 transition-all duration-500 group relative overflow-hidden">
               <div className="absolute top-0 right-0 w-24 h-24 bg-syncvision-teal/5 rounded-bl-full -z-10" />
               
-              <div className="w-14 h-14 bg-[#F7F9FB] text-[var(--syncvision-teal)] rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[var(--syncvision-green)] group-hover:text-white transition-all shadow-sm">
+              <div className="w-14 h-14 bg-[#F7F9FB] text-[var(--syncvision-teal)] rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[var(--syncvision-green)] group-hover:text-[var(--syncvision-gold)] transition-all duration-300 shadow-sm">
                 <Target className="w-7 h-7" />
               </div>
               
@@ -48,10 +54,16 @@ export default function MissionVision() {
 
           {/* Vision Card: Integrated from "Our Vision" text */}
           <Reveal>
-            <div className="h-full bg-white p-8 lg:p-12 rounded-[2.5rem] shadow-sm border border-slate-100 hover:border-[var(--syncvision-gold)]/30 transition-all duration-500 group relative overflow-hidden">
+            <div className="h-full bg-white p-8 lg:p-12 rounded-[2.5rem] shadow-sm 
+            border border-slate-100 
+            hover:border-[var(--syncvision-gold)]/30 
+            hover:shadow-xl 
+            hover:shadow-[0_20px_40px_rgba(10,77,68,0.05)]
+            transition-all duration-500 
+            group relative overflow-hidden">
               <div className="absolute top-0 right-0 w-24 h-24 bg-[var(--syncvision-gold)]/5 rounded-bl-full -z-10" />
               
-              <div className="w-14 h-14 bg-[#F7F9FB] text-[var(--syncvision-teal)] rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[var(--syncvision-green)] group-hover:text-white transition-all shadow-sm">
+              <div className="w-14 h-14 bg-[#F7F9FB] text-[var(--syncvision-teal)] rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[var(--syncvision-green)] group-hover:text-[var(--syncvision-gold)] transition-all duration-300 shadow-sm">
                 <Eye className="w-7 h-7" />
               </div>
               
